@@ -1,24 +1,24 @@
 .ds-close-btn {
   position: absolute;
   display: block;
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 1.9rem;
+  height: 1.9rem;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .ds-close-btn:before,
 .ds-close-btn:after {
   content: "";
   position: absolute;
-  top: .04rem;
-  left: .8325rem;
+  top: 0.05rem;
+  left: 0.83rem;
   display: block;
-  width: .1875rem;
-  height: 1.875rem;
-  border-radius: .1875rem;
+  width: 0.19rem;
+  height: 1.8rem;
+  border-radius: 0.1875rem;
   background-color: #ff0000;
-  transition: background-color .3s;
+  transition: background-color 200ms;
 }
 
 .ds-close-btn:before {
@@ -29,8 +29,7 @@
   transform: rotate(135deg);
 }
 
-.ds-close-btn:hover {
-  transform: scale(1.2);
-  transform-origin: 50% 50%;
-  transition: all .3s;
+.ds-close-btn:hover:before,
+.ds-close-btn:hover:after {
+  background-color: #000000;
 }
