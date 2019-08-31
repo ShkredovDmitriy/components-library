@@ -17,7 +17,7 @@ const dsModal = (function($) {
   // -- КОНФИГУРАЦИЯ МОДУЛЯ
   // -- конфиг по умолчанию
   const config = {
-    modalContainer: '.ds-modal', // контейнер модального окна
+    modalContainer: '.ds-modal', // контейнер компонента
     modalOpenButton: '.ds-modal-open-btn', // кнопки для раскрытия модального окна
     modalCloseButton: '.ds-modal-close-btn', // кнопки для закрытия модального окна
     animBlock: 'fade-in-scale-block', // первый шаг анимации
@@ -131,7 +131,7 @@ const dsModal = (function($) {
       close(); // вызываем метод закрытия любой открытой модалки
     });
   };
-  // -- автостарт подписок при старте модуля
+  // -- автостарт методов при старте модуля
   addOpenButtons();
   addCloseButtons();
 
