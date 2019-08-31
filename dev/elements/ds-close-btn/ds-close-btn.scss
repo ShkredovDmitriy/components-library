@@ -4,21 +4,21 @@
   width: 1.9rem;
   height: 1.9rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .ds-close-btn:before,
 .ds-close-btn:after {
   content: "";
   position: absolute;
-  top: 0.05rem;
-  left: 0.83rem;
+  top: .05rem;
+  left: .83rem;
   display: block;
-  width: 0.19rem;
+  width: .19rem;
   height: 1.8rem;
-  border-radius: 0.1875rem;
+  border-radius: .1875rem;
   background-color: #ff0000;
-  transition: background-color 200ms;
+  transition: background-color 300ms;
 }
 
 .ds-close-btn:before {
