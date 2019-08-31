@@ -1,0 +1,12 @@
+form(action="ds-select.html")
+    .form-wrapper
+        .ds-select
+            select#dsSelect.ds-select__html-select(name="category")
+                option(value="option1" selected="true") Категория 1
+                option(value="option2") Категория 2
+                option(value="option3") Категория 3
+                option(value="option4") Категория 4
+                option(value="option5") Категория 5
+            .ds-select__default-option Выберите категорию
+            ul.ds-select__user-select
+        input.ds-select__submit-button(type="submit" value="Отправить")
