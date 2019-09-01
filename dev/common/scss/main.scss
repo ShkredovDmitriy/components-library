@@ -4,11 +4,19 @@
 // -- стили элементов
 @import "../../elements/ds-close-btn/ds-close-btn.scss";
 
-// -- стили страниц
+@import "../../elements/ds-arrow-pointer/ds-arrow-pointer";
 
-@import "../../pages/ds-select/ds-select.scss";
+@import "../../elements/ds-plus-btn/ds-plus-btn";
 
 // -- стили компонентов
 @import "../../components/ds-modal/ds-modal.scss";
 
 @import "../../components/ds-select/ds-select.scss";
+
+@import "../../components/ds-accordion/ds-accorgion.scss";
+
+// -- стили страниц
+
+@import "../../pages/ds-select/ds-select.scss";
+
+@import "../../pages/ds-accordion/ds-accordion.scss";
