@@ -18,6 +18,7 @@
   overflow: hidden;
   overflow-y: auto;
   will-change: opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 /* обертка с выравниванием модального окна по горизонтали и верикали */
@@ -46,6 +47,7 @@ _:-ms-fullscreen,
   border-radius: .4rem;
   background-color: #ffffff;
   will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 /* расположение кнопки закрытия (крестика) */

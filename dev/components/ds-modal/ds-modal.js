@@ -9,7 +9,7 @@
 
   Сделано:
     - меняем скроллбар на паддинг при вызове модалки
-    - экспорт открытых методов open, close, modalStatus
+    - экспорт открытых методов open, close, state
     - вызов модалки по data-type
 */
 
@@ -28,9 +28,9 @@ const dsModal = (function($) {
   // -- объединение дефолтного и входящего конфига
 
   // -- ПЕРЕМЕННЫЕ
-  let modalStatus = 0; // состояние модуля, 0 - закрыт, 1 - открыт
+  let state = 0; // состояние модуля, 0 - закрыт, 1 - открыт
 
-  // -- МИНИ ХЕЛПЕРЫ
+  // -- ХЕЛПЕРЫ
   // -- выполнение анимации по очереди через transitionend
   function cssAnimation(animatedElement, animationClass, directionFlag = true) {
     return new Promise((resolve, reject) => {
@@ -104,8 +104,8 @@ const dsModal = (function($) {
     addClass(modal(dataType), config.animBlock, 1);
     addClass(modal(dataType), config.animBg, 10);
     addClass(modal(dataType), config.animBody, 300);
-    modalStatus = 1;
-    log(`open, data-type: ${dataType}, status ${modalStatus}`);
+    state = 1;
+    log(`open, data-type: ${dataType}, status ${state}`);
   };
   // -- метод закрытия модального окна
   const close = function() {
@@ -113,8 +113,8 @@ const dsModal = (function($) {
     remClass($(config.modalContainer), config.animBody, 1);
     remClass($(config.modalContainer), config.animBg, 300);
     remClass($(config.modalContainer), config.animBlock, 600);
-    modalStatus = 0;
-    log(`close, status ${modalStatus}`);
+    state = 0;
+    log(`close, status ${state}`);
   };
 
   // -- ЗАКРЫТЫЕ МЕТОДЫ
@@ -142,6 +142,6 @@ const dsModal = (function($) {
   return {
     open, // при вызове указываем data-type модалки, пример: dsModal.open("info");
     close,
-    modalStatus,
+    state,
   };
 }(jQuery));
