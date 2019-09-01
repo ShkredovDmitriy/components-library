@@ -1,0 +1,44 @@
+/* ds-accordion */
+
+/* оболочка компонента */
+.ds-accordion {
+  position: relative;
+  margin: 1rem;
+  border: .15rem solid #848484;
+  background-color: #ffffff;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* заголовок всегда виден */
+.ds-accordion__headline {
+  position: relative;
+  padding: 2rem 4rem;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+/* выпадающий блок */
+.ds-accordion__dropdown {
+  max-height: 0;
+  font-size: 1.25rem;
+  text-align: left;
+  overflow: hidden;
+  transition: max-height 300ms ease-out;
+}
+
+/* блок с текстом в выпадающем блоке */
+.ds-accordion__description {
+  display: block;
+  padding: 0 4rem 2rem;
+}
+
+/* расположение стрелки */
+.ds-accordion .ds-arrow-pointer {
+  right: 1.25rem;
+}
+
+/* анимация стрелки */
+.ds-accordion.active .ds-arrow-pointer {
+  transform: rotate(-180deg);
+}
