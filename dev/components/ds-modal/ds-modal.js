@@ -1,12 +1,10 @@
 /* eslint-disable func-names */
 /* -- DS-MODAL МОДАЛЬНОЕ ОКНО v.1.0.2
-
   В планах:
     - анимация модалки на промисах и transitionend
     - добавить возможность закрывать модалку по data-type
     - входящий конфиг должен перебивать дефолтный конфиг
     - входящий конфиг с вариантами анимации модалки
-
   Сделано:
     - меняем скроллбар на паддинг при вызове модалки
     - экспорт открытых методов open, close, state
@@ -23,7 +21,7 @@ const dsModal = (function($) {
     animBlock: 'fade-in-scale-block', // первый шаг анимации
     animBg: 'fade-in-scale-bg', // второй шаг анимации
     animBody: 'fade-in-scale-body', // третий шаг анимации
-    modalLogging: true, // вывод данных в console.log, true / false
+    logging: false, // вывод данных в console.log, true / false
   };
   // -- объединение дефолтного и входящего конфига
 
@@ -50,7 +48,7 @@ const dsModal = (function($) {
   }
   // -- логгирование
   const log = function(mes) {
-    if (config.modalLogging) {
+    if (config.logging) {
       console.log(`ds-modal: ${mes}`);
     }
   };
