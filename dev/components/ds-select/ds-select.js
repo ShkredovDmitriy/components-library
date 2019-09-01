@@ -1,12 +1,12 @@
 /* eslint-disable func-names */
-/* -- DS-SELECT v.1.0.1
-
+/* -- DS-SELECT v.1.0.2
   В планах:
-    - Скролл внутри выпадающего списка
-    - Направление выпадения в зависимости от положения на экране
-
+    - входящий конфиг должен перебивать дефолтный конфиг
+    - входящий конфиг с вариантами анимации модалки
+    - скролл внутри выпадающего списка
+    - направление выпадения в зависимости от положения на экране
   Сделано:
-
+    - работа любого количества селектов от одного js модуля
 */
 
 const dsSelect = (function($) {
@@ -18,6 +18,7 @@ const dsSelect = (function($) {
     dropdownOption: '.ds-select__dropdown-option', // раскрывающийся блок со списком опций
     optionsList: '.ds-select__options-list', // формируем список опций
     selectedText: '.ds-select__selected-text', // блок с выбранным текстом
+    activeClass: 'active', // класс на раскрытом селекте
     logging: true, // вывод данных в console.log, true / false
   };
   // -- объединение дефолтного и входящего конфига
@@ -48,6 +49,12 @@ const dsSelect = (function($) {
         }
       });
   };
+  // -- логгирование
+  const log = function(mes) {
+    if (config.logging) {
+      console.log(`ds-select: ${mes}`);
+    }
+  };
 
   // -- ЗАКРЫТЫЕ МЕТОДЫ
   // -- метод открытия и закрытия выпадающего списка
@@ -58,11 +65,11 @@ const dsSelect = (function($) {
         .each((i, dropdown) => {
           dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
         });
-      $(element).addClass('active');
+      $(element).addClass(config.activeClass);
       state = 1;
     } else {
       $(config.dropdownOption).css('max-height', '0');
-      $(config.mainContainer).removeClass('active');
+      $(config.mainContainer).removeClass(config.activeClass);
       state = 0;
     }
   };
@@ -114,7 +121,7 @@ const dsSelect = (function($) {
   selectAnyOption();
 
   // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
-  console.log('ds-select: started');
+  log('started');
 
   // -- ЭКСПОРТ ОТКРЫТЫХ МЕТОДОВ
   return {

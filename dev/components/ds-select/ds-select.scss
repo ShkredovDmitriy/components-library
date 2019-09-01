@@ -33,39 +33,8 @@
 .ds-select__selected-text {
 }
 
-// стрелка указатель раскрывающегося списка
-.ds-select__arrow-pointer {
-  position: absolute;
-  top: calc(50% - .75rem);
-  right: .25rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  transition: transform 100ms;
-}
-
-.ds-select__arrow-pointer:before,
-.ds-select__arrow-pointer:after {
-  content: "";
-  position: absolute;
-  top: .44rem;
-  width: .18rem;
-  height: .82rem;
-  border-radius: .15rem;
-  background: red;
-}
-
-.ds-select__arrow-pointer:before {
-  left: .45rem;
-  transform: rotate(-45deg);
-}
-
-.ds-select__arrow-pointer:after {
-  left: .95rem;
-  transform: rotate(45deg);
-}
-
 // анимация стрелки указателя
-.ds-select.active .ds-select__arrow-pointer {
+.ds-select.active .ds-arrow-pointer {
   transform: rotate(-180deg);
 }
 
