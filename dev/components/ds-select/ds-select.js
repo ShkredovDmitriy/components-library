@@ -12,83 +12,112 @@
 const dsSelect = (function($) {
   // -- КОНФИГУРАЦИЯ МОДУЛЯ
   // -- конфиг по умолчанию
-  const container = document.querySelector('.ds-select'); // главный контейнер каждого компонента
-  const htmlSelect = document.querySelector('.ds-select__html-select'); // скрытый html select
-
-  const htmlSelectOptions = htmlSelect.querySelectorAll('option'); // //////////////////////////////
-  const userSelect = document.querySelector('.ds-select__dropdown-option');
-  const dropdownList = document.querySelector('.ds-select__dropdown-select');
-  const dropdown = document.querySelector('.ds-select__selected-option');
-
-  // -- конфиг по умолчанию
   const config = {
-    selectContainer: '.ds-select', // контейнер компонента
+    mainContainer: '.ds-select', // контейнер компонента
+    selectedOption: '.ds-select__selected-option', // блок с выбранным значением
+    dropdownOption: '.ds-select__dropdown-option', // раскрывающийся блок со списком опций
+    optionsList: '.ds-select__options-list', // формируем список опций
+    selectedText: '.ds-select__selected-text', // блок с выбранным текстом
+    logging: true, // вывод данных в console.log, true / false
   };
+  // -- объединение дефолтного и входящего конфига
 
-  let state = 0;
+  // -- ПЕРЕМЕННЫЕ
+  let state = 0; // состояние модуля, 0 - закрыт, 1 - открыт
 
-  function openCloseDropdown() {
-    if (state == 0) {
-      userSelect.style.maxHeight = `${userSelect.scrollHeight}px`;
-      container.classList.add('active');
-      state = 1;
-    } else {
-      userSelect.style.maxHeight = 0;
-      container.classList.remove('active');
-      state = 0;
-    }
-  }
-
-  function addSelectToOption(arg) {
-    const htmlSelectOptions = document.querySelectorAll('.ds-select__html-select option');
-    for (let i = 0; i < htmlSelectOptions.length; i++) {
-      if (i == arg) {
-        htmlSelectOptions[i].setAttribute('selected', true);
-      } else {
-        htmlSelectOptions[i].removeAttribute('selected');
-      }
-    }
-  }
-
-  function addSelectToDefault(arg) {
-    const userSelects = document.querySelectorAll('.ds-select__dropdown-select li');
-    for (let i = 0; i < userSelects.length; i++) {
-      if (i == arg) {
-        document.querySelector('.ds-select__selected-text').innerHTML = userSelects[i].innerHTML;
-      }
-    }
-  }
-
-  // раскрытие списка с псевдоопциями
-  dropdown.addEventListener('click', e => {
-    openCloseDropdown();
-  });
+  // -- ХЕЛПЕРЫ
+  // -- добавляем selected=true в выбранный html option
+  const addSelectedToOption = function(element, arg) {
+    $(element)
+      .find('option')
+      .each((i, option) => {
+        if (i == arg) {
+          option.setAttribute('selected', true);
+        } else {
+          option.removeAttribute('selected');
+        }
+      });
+  };
+  // -- меняем текст по умолчанию в блоке на текст из html select
+  const changeTextFromDefault = function(element, arg) {
+    $(element)
+      .find('li')
+      .each((i, li) => {
+        if (i == arg) {
+          element.querySelector(config.selectedText).innerHTML = li.innerHTML;
+        }
+      });
+  };
 
   // -- ЗАКРЫТЫЕ МЕТОДЫ
-  // -- Для каждого компонента заполняем выпадающий список
-  const addSelectsToList = function() {
-    document.querySelectorAll(config.selectContainer).forEach(element => {
-      const options = element.querySelectorAll('option');
-      const list = element.querySelector('.ds-select__dropdown-select');
-      for (let i = 0; i < options.length; i++) {
-        const elem = document.createElement('li');
-        elem.innerHTML = options[i].innerHTML;
-        list.appendChild(elem);
-      }
+  // -- метод открытия и закрытия выпадающего списка
+  const openCloseDropdown = function(element) {
+    if (state == 0) {
+      $(element)
+        .find(config.dropdownOption)
+        .each((i, dropdown) => {
+          dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+        });
+      $(element).addClass('active');
+      state = 1;
+    } else {
+      $(config.dropdownOption).css('max-height', '0');
+      $(config.mainContainer).removeClass('active');
+      state = 0;
+    }
+  };
+
+  // -- Заполняем выпадающий список для каждого ds-select на странице
+  const addOptionsToList = function() {
+    $(config.mainContainer).each((i, element) => {
+      const list = element.querySelector(config.optionsList);
+      const options = $(element)
+        .find('option')
+        .each((i, htmlOption) => {
+          const costumOption = document.createElement('li');
+          costumOption.innerHTML = htmlOption.innerHTML;
+          list.appendChild(costumOption);
+        });
     });
   };
-  // -- автостарт методов при старте модуля
-  addSelectsToList();
 
-  dropdownList.querySelectorAll('li').forEach((li, i) => {
-    li.addEventListener('click', e => {
-      addSelectToOption(i);
-      addSelectToDefault(i);
-      openCloseDropdown();
-      console.log(`Выбрана опция ${i}`);
+  // -- устанавливаем подписки на раскрытие списка
+  const addOpenListeners = function() {
+    $(config.mainContainer).each((i, element) => {
+      $(element)
+        .find(config.selectedOption)
+        .click(() => {
+          openCloseDropdown(element);
+        });
     });
-  });
+  };
+
+  // -- устанавливаем подписки на клик по элементу выпадающего списка
+  const selectAnyOption = function() {
+    $(config.mainContainer).each((i, element) => {
+      $(element)
+        .find('li')
+        .each((i, li) => {
+          li.addEventListener('click', e => {
+            addSelectedToOption(element, i);
+            changeTextFromDefault(element, i);
+            openCloseDropdown();
+            console.log(`Выбрана опция ${i}`);
+          });
+        });
+    });
+  };
+
+  // -- автостарт методов при старте модуля
+  addOptionsToList();
+  addOpenListeners();
+  selectAnyOption();
 
   // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
   console.log('ds-select: started');
+
+  // -- ЭКСПОРТ ОТКРЫТЫХ МЕТОДОВ
+  return {
+    state,
+  };
 }(jQuery));

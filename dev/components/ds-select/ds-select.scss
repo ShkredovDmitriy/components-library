@@ -40,7 +40,7 @@
   right: .25rem;
   width: 1.5rem;
   height: 1.5rem;
-  transition: transform 200ms;
+  transition: transform 100ms;
 }
 
 .ds-select__arrow-pointer:before,
@@ -79,10 +79,12 @@
 }
 
 // -- выпадающий список
-.ds-select__dropdown-select {
+.ds-select__options-list {
   display: block;
   margin: 0;
-  margin-bottom: .3rem;
+  margin-bottom: .1rem;
+  padding-top: .5rem;
+  border: .15rem solid #848484;
   border-radius: .3rem;
   background: white;
   font-size: inherit;
@@ -92,19 +94,16 @@
   transition: max-height 200ms;
 }
 
-.ds-select.active .ds-select__dropdown-select {
-  border: .15rem solid #848484;
-}
-
 // -- элементы выпадающего списка
-.ds-select__dropdown-select li {
+.ds-select__options-list li {
   padding-right: 2rem;
+  padding-bottom: .5rem;
   padding-left: 1rem;
   cursor: pointer;
   list-style-type: none;
 }
 
 // -- эфект при наведении
-.ds-select__dropdown-select li:hover {
+.ds-select__options-list li:hover {
   background: rgba(0, 0, 0, .1);
 }

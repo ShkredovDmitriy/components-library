@@ -3,31 +3,44 @@ form(action="ds-select.html")
     .ds-select__form-wrapper
 
         .ds-select
-            select#dsSelect.ds-select__html-select(name="category")
-                option(value="option1" selected="true") Категория номер один
-                option(value="option2") Категория категория номен два два два
-                option(value="option3") Категория категория номен три три три
-                option(value="option4") Категория категория номен четыре четыре четыре
-                option(value="option5") Категория категория номен пять пять пять
+            select#dsSelect.ds-select__html-select(name="category1")
+                option(value="option1" selected="true") Тип запроса один
+                option(value="option2") Тип запроса номер два два два
+                option(value="option3") Тип запроса номер три три три
+                option(value="option4") Тип запроса номер четыре четыре четыре
             .ds-select__selected-option
-                .ds-select__selected-text Выберите категорию
+                .ds-select__selected-text Выберите тип запроса
                 .ds-select__arrow-pointer
             .ds-select__dropdown-option
-                ul.ds-select__dropdown-select
+                ul.ds-select__options-list
 
     .ds-select__form-wrapper
 
         .ds-select
-            select#dsSelect.ds-select__html-select(name="category")
-                option(value="option1" selected="true") Категория номер один
-                option(value="option2") Lorem, ipsum dolor.
+            select#dsSelect.ds-select__html-select(name="category2")
+                option(value="option1" selected="true") Lorem, ipsum dolor.
+                option(value="option2") Lorem, ipsum dolor ret.
                 option(value="option3") Lorem ipsum dolor sit amet.
                 option(value="option4") Lorem ipsum dolor sit amet rew.
                 option(value="option5") Lorem ipsum dolor sit amet consectetur.
             .ds-select__selected-option
+                .ds-select__selected-text Хххххх ххххх ххх хххххх
+                .ds-select__arrow-pointer
+            .ds-select__dropdown-option
+                ul.ds-select__options-list
+
+    .ds-select__form-wrapper
+
+        .ds-select
+            select#dsSelect.ds-select__html-select(name="category3")
+                option(value="option1" selected="true") Lorem ipsum dolor sit.
+                option(value="option2") Lorem ipsum dolor sit amet.
+                option(value="option3") Lorem ipsum dolor sit amet consectetur.
+                option(value="option4") Lorem ipsum dolor sit amet rew.
+            .ds-select__selected-option
                 .ds-select__selected-text Выберите категорию
                 .ds-select__arrow-pointer
             .ds-select__dropdown-option
-                ul.ds-select__dropdown-select
+                ul.ds-select__options-list
     
     input.ds-select__submit-button(type="submit" value="Отправить")
