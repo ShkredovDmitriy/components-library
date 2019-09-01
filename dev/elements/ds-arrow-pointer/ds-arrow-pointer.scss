@@ -1,0 +1,30 @@
+// стрелка указатель раскрывающегося списка
+.ds-arrow-pointer {
+  position: absolute;
+  top: calc(50% - .75rem);
+  right: .25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 100ms;
+}
+
+.ds-arrow-pointer:before,
+.ds-arrow-pointer:after {
+  content: "";
+  position: absolute;
+  top: .44rem;
+  width: .18rem;
+  height: .82rem;
+  border-radius: .15rem;
+  background: red;
+}
+
+.ds-arrow-pointer:before {
+  left: .45rem;
+  transform: rotate(-45deg);
+}
+
+.ds-arrow-pointer:after {
+  left: .95rem;
+  transform: rotate(45deg);
+}
