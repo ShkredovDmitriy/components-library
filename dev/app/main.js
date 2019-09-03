@@ -1,7 +1,9 @@
 // импортируем стили
 import '../common/scss/main.scss';
 
-// импорьтруем компоненты
+// импортируем компоненты
 import '../components/ds-modal/ds-modal';
 import '../components/ds-select/ds-select';
+import '../components/ds-input-pass/ds-input-pass';
+import '../components/ds-textarea/ds-textarea';
 import '../components/ds-accordion/ds-accordion';
