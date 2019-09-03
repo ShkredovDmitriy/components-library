@@ -5,6 +5,8 @@
 @import "./reset.scss";
 
 // -- стили элементов
+@import "../../elements/ds-mob-menu-btn/ds-mob-menu-btn.scss";
+
 @import "../../elements/ds-close-btn/ds-close-btn.scss";
 
 @import "../../elements/ds-arrow-pointer/ds-arrow-pointer";
@@ -15,6 +17,8 @@
 
 // -- стили компонентов
 @import "../../components/dev-menu/dev-menu.scss";
+
+@import "../../components/ds-main-header/ds-main-header.scss";
 
 @import "../../components/ds-modal/ds-modal.scss";
 
