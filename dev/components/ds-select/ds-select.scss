@@ -1,8 +1,19 @@
-// -- главный блок компонента в который помещаются все остальные
+// ds-select
+// стилизованный html select
+
+/*
+  Интерактив:
+    - .ds-select.active отображает красную рамку
+    - .ds-select.active отображает helper-text
+*/
+
+// -- главный блок компонента
 .ds-select {
+  @include user-select-none();
   position: relative;
   width: 100%;
   font-size: 1.2rem;
+  line-height: 1.2;
 }
 
 // -- html select на основе которого создается компонент
@@ -75,4 +86,14 @@
 // -- эфект при наведении
 .ds-select__options-list li:hover {
   background: rgba(0, 0, 0, .1);
+}
+
+// меняем цвет рамки поля на красный если есть класс .error
+.ds-select.error .ds-select__selected-option {
+  border: .15rem solid red;
+}
+
+// отображаем helper-text если есть класс .error
+.ds-select.error .helper-text {
+  display: block;
 }

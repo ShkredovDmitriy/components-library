@@ -2,12 +2,11 @@
 
 /* оболочка компонента */
 .ds-accordion {
+  @include user-select-none();
   position: relative;
   margin: 1rem;
   border: .15rem solid #848484;
   background-color: #ffffff;
-  -moz-user-select: none;
-  user-select: none;
 }
 
 /* заголовок всегда виден */
@@ -16,6 +15,7 @@
   padding: 2rem 4rem;
   font-size: 1.5rem;
   text-align: left;
+  cursor: pointer;
 }
 
 /* выпадающий блок */
@@ -41,4 +41,5 @@
 /* анимация стрелки */
 .ds-accordion.active .ds-arrow-pointer {
   transform: rotate(-180deg);
+  transform-origin: center;
 }

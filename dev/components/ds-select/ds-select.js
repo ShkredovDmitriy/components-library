@@ -19,7 +19,7 @@ const dsSelect = (function($) {
     optionsList: '.ds-select__options-list', // формируем список опций
     selectedText: '.ds-select__selected-text', // блок с выбранным текстом
     activeClass: 'active', // класс на раскрытом селекте
-    logging: true, // вывод данных в console.log, true / false
+    logging: false, // вывод данных в console.log, true / false
   };
   // -- объединение дефолтного и входящего конфига
 
@@ -109,7 +109,7 @@ const dsSelect = (function($) {
             addSelectedToOption(element, i);
             changeTextFromDefault(element, i);
             openCloseDropdown();
-            console.log(`Выбрана опция ${i}`);
+            log(`выбрана опция ${i}`);
           });
         });
     });
