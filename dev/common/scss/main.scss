@@ -1,3 +1,6 @@
+// переменные
+@import "./vars.scss";
+
 // -- сброс стилей
 @import "./reset.scss";
 
@@ -8,15 +11,27 @@
 
 @import "../../elements/ds-plus-btn/ds-plus-btn";
 
+@import "../../elements/helper-text/helper-text.scss";
+
 // -- стили компонентов
+@import "../../components/dev-menu/dev-menu.scss";
+
 @import "../../components/ds-modal/ds-modal.scss";
 
 @import "../../components/ds-select/ds-select.scss";
+
+@import "../../components/ds-input/ds-input.scss";
+
+@import "../../components/ds-input-pass/ds-input-pass.scss";
+
+@import "../../components/ds-textarea/ds-textarea.scss";
+
+@import "../../components/ds-checkbox/ds-checkbox.scss";
 
 @import "../../components/ds-accordion/ds-accorgion.scss";
 
 // -- стили страниц
 
-@import "../../pages/ds-select/ds-select.scss";
+@import "../../pages/form/form.scss";
 
-@import "../../pages/ds-accordion/ds-accordion.scss";
+@import "../../pages/accordion/accordion.scss";
