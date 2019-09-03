@@ -1,0 +1,112 @@
+extends ../../templates/index
+
+block content
+    form(action="ds-select.html")
+
+        .form-wrapper
+            .ds-input
+                label.ds-input__label Введите Имя
+                .ds-input__wrapper
+                    input.ds-input__field
+                .helper-text введите имя
+
+        .form-wrapper
+            .ds-input
+                label.ds-input__label Введите Фамилию
+                .ds-input__wrapper
+                    input.ds-input__field
+                .helper-text введите фамилию
+
+        .form-wrapper
+            .ds-input-pass
+                label.ds-input__label Введите пароль
+                .ds-input__wrapper
+                    input.ds-input__field(type="password")
+                    span.ds-input__eye-icon
+                .helper-text введите пароль
+
+        .form-wrapper
+            .ds-input-pass
+                label.ds-input__label Повторите пароль
+                .ds-input__wrapper
+                    input.ds-input__field(type="password")
+                    span.ds-input__eye-icon
+                .helper-text пароли не совпадают
+                
+
+        .form-wrapper
+            .ds-select
+                label.ds-input__label Тип запроса
+                select#dsSelect.ds-select__html-select(name="category1")
+                    option(value="option1" selected="true") Тип запроса один
+                    option(value="option2") Тип запроса номер два два два
+                    option(value="option3") Тип запроса номер три три три
+                    option(value="option4") Тип запроса номер четыре четыре четыре
+                .ds-select__selected-option
+                    .ds-select__selected-text Выберите тип запроса
+                    .ds-arrow-pointer
+                .ds-select__dropdown-option
+                    ul.ds-select__options-list
+                .helper-text выберите пункт
+
+        .form-wrapper
+
+            .ds-select
+                label.ds-input__label Тип запроса
+                select#dsSelect.ds-select__html-select(name="category2")
+                    option(value="option1" selected="true") Lorem, ipsum dolor.
+                    option(value="option2") Lorem, ipsum dolor ret.
+                    option(value="option3") Lorem ipsum dolor sit amet.
+                    option(value="option4") Lorem ipsum dolor sit amet rew.
+                    option(value="option5") Lorem ipsum dolor sit amet consectetur.
+                .ds-select__selected-option
+                    .ds-select__selected-text Хххххх ххххх ххх хххххх
+                    .ds-arrow-pointer
+                .ds-select__dropdown-option
+                    ul.ds-select__options-list
+                .helper-text выберите пункт
+
+        .form-wrapper
+
+            .ds-select
+                label.ds-input__label Тип запроса
+                select#dsSelect.ds-select__html-select(name="category3")
+                    option(value="option1" selected="true") Lorem ipsum dolor sit.
+                    option(value="option2") Lorem ipsum dolor sit amet.
+                    option(value="option3") Lorem ipsum dolor sit amet consectetur.
+                    option(value="option4") Lorem ipsum dolor sit amet rew.
+                .ds-select__selected-option
+                    .ds-select__selected-text Выберите категорию
+                    .ds-arrow-pointer
+                .ds-select__dropdown-option
+                    ul.ds-select__options-list
+                .helper-text выберите пункт
+
+        .form-wrapper
+            .ds-textarea
+                label.ds-input__label Несколько слов о себе
+                .ds-input__wrapper
+                    textarea.ds-input__field
+                    .ds-input__field.ds-textarea__hidden-div
+                .helper-text введите имя
+
+
+        .form-wrapper
+
+            .ds-checkbox
+                label.ds-checkbox__label(for="userAgreement") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quae error rem, aperiam modi 
+                    a(href="#") nulla similique 
+                    | consectetur id laboriosam! Molestias perspiciatis recusandae tenetur numquam?
+                    input.ds-checkbox__checkbox(type="checkbox" id="userAgreement")
+                    span.ds-checkbox__span
+
+        .form-wrapper
+
+            .ds-checkbox
+                label.ds-checkbox__label(for="userMessages") Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident nobis, expedita autem repudiandae 
+                    a(href="#") nulla similique 
+                    | aliquam doloribus nesciunt deleniti earum quas et asperiores cum, reprehenderit magni.
+                    input.ds-checkbox__checkbox(type="checkbox" id="userMessages")
+                    span.ds-checkbox__span
+        
+            input.ds-submit-button(type="submit" value="Отправить")
