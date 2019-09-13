@@ -1,0 +1,49 @@
+.ds-checkbox2 {
+  @include margin-auto;
+  max-width: 40rem;
+
+  .ds-checkbox__label {
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    margin-top: .5rem;
+    width: 100%;
+  }
+
+  .ds-checkbox__input {
+    display: none;
+  }
+
+  .ds-checkbox__sprite-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-top: .125rem;
+    margin-right: .75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("../images/sprite-checkbox2.png");
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+
+  .ds-checkbox__input:checked ~ .ds-checkbox__sprite-container {
+    background-color: rgb(61, 194, 28);
+    background-position: 100% 0;
+  }
+
+  .ds-checkbox__text-container {
+    flex-grow: 1;
+    font-size: 1rem;
+  }
+}
+
+.ds-checkbox2.error {
+
+  .ds-checkbox__sprite-container {
+    background-color: rgb(209, 28, 28);
+  }
+
+  .ds-checkbox__text-container {
+    color: rgb(209, 28, 28);
+  }
+}

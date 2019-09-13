@@ -1,3 +1,6 @@
+//- миксины
+@import "./mixins.scss";
+
 // -- сброс стилей
 @import "./reset.scss";
 
@@ -18,6 +21,8 @@
 @import "../../components/ds-select/ds-select.scss";
 
 @import "../../components/ds-accordion/ds-accorgion.scss";
+
+@import "../../components/ds-checkbox2/ds-checkbox2.scss";
 
 // -- стили страниц
 
