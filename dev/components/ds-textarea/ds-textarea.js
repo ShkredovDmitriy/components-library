@@ -9,7 +9,9 @@ const dsTextarea = (function($) {
     content = $(this).val();
     content = content.replace(/\n/g, '<br>');
     hiddenDiv.html(`${content}<br class="lbr">`);
-    $(this).css('height', hiddenDiv.height());
+    const hiddenHeight = hiddenDiv.height();
+    const hiddenHeightInRem = `${hiddenHeight / parseInt($('body').css('font-size')) + 1}rem`;
+    $(this).css('height', hiddenHeightInRem);
     console.log(hiddenDiv.height());
   });
 }(jQuery));

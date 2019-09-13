@@ -1,0 +1,42 @@
+// мобильное меню
+
+.ds-mob-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 20rem;
+  background: #c1c1c1;
+  transform: translateX(-105%);
+  transition: transform 200ms;
+}
+
+// список ссылок меню
+.ds-mob-menu__list {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  padding-top: 10rem;
+  min-height: 100vh;
+}
+
+// ссылка
+.ds-mob-menu__link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: red;
+}
+
+// для активации добавляем класс active
+.ds-mob-menu.active {
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 570px) {
+
+  .ds-mob-menu {
+    width: 100vw;
+  }
+}
