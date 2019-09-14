@@ -1,0 +1,49 @@
+// ds-input-pass
+// поле ввода пароля
+
+/*
+  Интерактив:
+    - .ds-input-pass.active отображает красную рамку
+    - .ds-input-pass.active отображает helper-text
+*/
+
+// главный контейнер
+.ds-input-pass {
+  width: 100%;
+}
+
+// поле ввода пароля
+.ds-input-pass .ds-input__field {
+  padding-right: 3rem;
+}
+
+// меняем цвет рамки поля на красный если есть класс .error
+.ds-input-pass.error .ds-input-pass__input {
+  border: .15rem solid red;
+}
+
+// глаз - индикатор видимости пароля, меняется при смене типа поля
+.ds-input__eye-icon {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1rem);
+  right: .3rem;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: #000;
+  background: url("./images/ds-input-pass_hide-icon.svg") no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+// изменяем глаз при смене типа поля
+.ds-input__field[type="text"] ~ .ds-input__eye-icon {
+  background: url("./images/ds-input-pass_show-icon.svg") no-repeat;
+}
+
+// отображаем helper-text если есть класс .error
+.ds-input-pass.error .helper-text {
+  display: block;
+}

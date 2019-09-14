@@ -1,7 +1,10 @@
+// ds-checkbox v.1.2
+
 .ds-checkbox2 {
   @include margin-auto;
   max-width: 40rem;
 
+  // обертка для всех элементов
   .ds-checkbox__label {
     justify-content: flex-start;
     align-items: flex-start;
@@ -10,10 +13,12 @@
     width: 100%;
   }
 
+  // скрываем настоящий чекбокс
   .ds-checkbox__input {
     display: none;
   }
 
+  // контейнер лоя галочки
   .ds-checkbox__sprite-container {
     flex-grow: 0;
     flex-shrink: 0;
@@ -21,27 +26,27 @@
     margin-right: .75rem;
     width: 1.5rem;
     height: 1.5rem;
-    background: url("../images/sprite-checkbox2.png");
-    background-position: 0 0;
-    background-size: auto 100%;
+    background: url("../images/form-checkbox-1.svg");
+    background-position: center;
+    background-size: 100% 100%;
   }
 
+  // меняем картинку галочки
   .ds-checkbox__input:checked ~ .ds-checkbox__sprite-container {
-    background-color: rgb(61, 194, 28);
-    background-position: 100% 0;
+    background: url("../images/form-checkbox-2.svg");
+    background-position: center;
+    background-size: 100% 100%;
   }
 
+  // текст для чекбокса
   .ds-checkbox__text-container {
     flex-grow: 1;
     font-size: 1rem;
   }
 }
 
+// ошибка валидации + класс error
 .ds-checkbox2.error {
-
-  .ds-checkbox__sprite-container {
-    background-color: rgb(209, 28, 28);
-  }
 
   .ds-checkbox__text-container {
     color: rgb(209, 28, 28);

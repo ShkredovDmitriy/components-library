@@ -1,17 +1,18 @@
 // -- Стили страницы, не онтосятся к компоненту
-.ds-select__form-wrapper {
+.form-wrapper {
   margin-top: 1rem;
   margin-right: auto;
   margin-left: auto;
   max-width: 20rem;
 }
 
-.ds-select__submit-button {
-  margin-top: 50px;
+.ds-submit-button {
+  margin-top: 3rem;
   width: 100%;
   height: 3.125rem;
   border: 0;
   border-radius: 0;
+  border-radius: .3rem;
   box-shadow: none;
   background: red;
   font-size: 1.2rem;

@@ -1,0 +1,22 @@
+// ds-input-pass
+// поле ввода многострочного текста
+
+/*
+  Интерактив:
+    - .ds-input-pass.active отображает красную рамку
+    - .ds-input-pass.active отображает helper-text
+*/
+
+// главный контейнер
+.ds-textarea {
+  width: 100%;
+}
+
+.ds-textarea .ds-input__field {
+  min-height: 5.5rem;
+}
+
+// скрытый блок для вычисления высоты textarea
+.ds-textarea__hidden-div {
+  display: none;
+}
