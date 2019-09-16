@@ -1,0 +1,23 @@
+@media screen and (max-width: 1300px) {
+
+  html,
+  body {
+    font-size: calc(100vw / 1080 * 16);
+  }
+}
+
+@media screen and (max-width: 980px) {
+
+  html,
+  body {
+    font-size: calc(100vw / 800 * 16);
+  }
+}
+
+@media screen and (max-width: 570px) {
+
+  html,
+  body {
+    font-size: calc(100vw / 500 * 16);
+  }
+}

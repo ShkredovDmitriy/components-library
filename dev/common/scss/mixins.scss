@@ -1,0 +1,41 @@
+// запрещаем выделение элементов
+@mixin user-select-none() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// универсальный градиент
+
+// стилизация placeholder
+@mixin placeholder {
+
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+  :-moz-placeholder {
+    @content;
+  }
+
+  ::-moz-placeholder {
+    @content;
+  }
+
+  :-ms-input-placeholder {
+    @content;
+  }
+
+  :placeholder-shown {
+    @content;
+  }
+}
+
+// обрезка длинной строки
+@mixin text-overflow() {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

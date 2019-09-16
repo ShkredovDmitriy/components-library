@@ -1,8 +1,13 @@
 // переменные
 @import "./vars.scss";
 
+// миксины
+@import "./mixins.scss";
 // -- сброс стилей
-@import "./reset.scss";
+@import "./ds-reset.scss";
+
+// медиа запросы
+@import "./ds-media.scss";
 
 // -- стили элементов
 @import "../../elements/ds-mob-menu-btn/ds-mob-menu-btn.scss";

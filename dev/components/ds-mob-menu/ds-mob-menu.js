@@ -14,6 +14,4 @@ const dsMobMenu = (function($) {
       state = 0;
     }
   });
-
-  console.log('ds-mob-menu: started');
 }(jQuery));

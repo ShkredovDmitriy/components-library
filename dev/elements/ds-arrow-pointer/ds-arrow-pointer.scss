@@ -5,27 +5,31 @@
   right: .25em;
   width: 1.5em;
   height: 1.5em;
+  background: url("../images/arrow-down-1.svg") no-repeat;
+  background-position: center;
+  background-size: 67% auto;
   font-size: 1em;
   transition: transform 100ms;
 }
 
-.ds-arrow-pointer:before,
-.ds-arrow-pointer:after {
-  content: "";
-  position: absolute;
-  top: .44em;
-  width: .18em;
-  height: .82em;
-  border-radius: .15em;
-  background: red;
-}
+// стрелка без графики
+// .ds-arrow-pointer:before,
+// .ds-arrow-pointer:after {
+//   content: "";
+//   position: absolute;
+//   top: .44em;
+//   width: .18em;
+//   height: .82em;
+//   border-radius: .15em;
+//   background: red;
+// }
 
-.ds-arrow-pointer:before {
-  left: .45em;
-  transform: rotate(-45deg);
-}
+// .ds-arrow-pointer:before {
+//   left: .45em;
+//   transform: rotate(-45deg);
+// }
 
-.ds-arrow-pointer:after {
-  left: .95em;
-  transform: rotate(45deg);
-}
+// .ds-arrow-pointer:after {
+//   left: .95em;
+//   transform: rotate(45deg);
+// }

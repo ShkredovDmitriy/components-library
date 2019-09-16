@@ -2,7 +2,6 @@
 /* -- DS-SELECT v.1.0.2
   В планах:
     - входящий конфиг должен перебивать дефолтный конфиг
-    - входящий конфиг с вариантами анимации модалки
     - скролл внутри выпадающего списка
     - направление выпадения в зависимости от положения на экране
   Сделано:
@@ -80,10 +79,12 @@ const dsSelect = (function($) {
       const list = element.querySelector(config.optionsList);
       const options = $(element)
         .find('option')
-        .each((i, htmlOption) => {
-          const costumOption = document.createElement('li');
-          costumOption.innerHTML = htmlOption.innerHTML;
-          list.appendChild(costumOption);
+        .each((j, htmlOption) => {
+          if (j > 0) {
+            const costumOption = document.createElement('li');
+            costumOption.innerHTML = htmlOption.innerHTML;
+            list.appendChild(costumOption);
+          }
         });
     });
   };

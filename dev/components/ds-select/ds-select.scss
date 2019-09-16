@@ -63,11 +63,9 @@
   display: block;
   margin: 0;
   margin-bottom: .1rem;
-  padding-top: .5rem;
   border: .15rem solid #848484;
   border-radius: .3rem;
   background: white;
-  font-size: inherit;
   font-size: inherit;
   text-align: left;
   color: #848484;
@@ -76,6 +74,7 @@
 
 // -- элементы выпадающего списка
 .ds-select__options-list li {
+  padding-top: .5rem;
   padding-right: 2rem;
   padding-bottom: .5rem;
   padding-left: 1rem;
