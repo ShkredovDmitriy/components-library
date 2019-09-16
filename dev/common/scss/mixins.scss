@@ -1,4 +1,4 @@
-// запрещаем выделение элементов
+// запрещаем выделение овьектов
 @mixin user-select-none() {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -32,10 +32,47 @@
   }
 }
 
-// обрезка длинной строки
+// обрезаем текст и ставим три точки
 @mixin text-overflow() {
-  display: block;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@mixin margin-auto() {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// градиент
+@mixin linear-gradient($direction, $fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(
+    linear,
+    $direction,
+    from($fromColor),
+    to($toColor)
+  ); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(
+    $direction,
+    $fromColor,
+    $toColor
+  ); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(
+    $direction,
+    $fromColor,
+    $toColor
+  ); /* FF3.6 */
+  background-image: -ms-linear-gradient(
+    $direction,
+    $fromColor,
+    $toColor
+  ); /* IE10 */
+  background-image: -o-linear-gradient(
+    $direction,
+    $fromColor,
+    $toColor
+  ); /* Opera 11.10+ */
+  background-image: linear-gradient($direction, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr="#{$fromColor}", EndColorStr="#{$toColor}");
 }

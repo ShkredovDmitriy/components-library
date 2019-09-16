@@ -3,6 +3,7 @@
 
 // миксины
 @import "./mixins.scss";
+
 // -- сброс стилей
 @import "./ds-reset.scss";
 
@@ -38,6 +39,8 @@
 @import "../../components/ds-checkbox/ds-checkbox.scss";
 
 @import "../../components/ds-accordion/ds-accorgion.scss";
+
+@import "../../components/ds-checkbox2/ds-checkbox2.scss";
 
 @import "../../components/ds-mob-menu/ds-mob-menu.scss";
 
