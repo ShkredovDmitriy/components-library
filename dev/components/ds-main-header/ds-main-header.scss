@@ -1,30 +1,70 @@
+// главная панель навигации
 .main-header {
   padding: 0 1.5rem;
-  height: 4rem;
-  background: #eaeaea;
+  height: 3.5rem;
+  background-color: #ed6d37;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
+// обертка
 .main-header__wrapper {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin: 0 auto;
-  max-width: 90rem;
+  width: 100%;
   height: 100%;
 }
 
+// ссылка с логотипом
 .main-header__logo-container {
+  display: block;
   flex-grow: 0;
   width: 10rem;
+  height: 2.5rem;
+  background-color: #ffffff;
 }
 
+// главное меню
 .main-header__menu-container {
   flex-grow: 1;
 }
 
-.main-header__mob-menu-container {
+// кнопка мобильного меню
+.mob-menu__sandwich {
   flex-grow: 0;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   width: 3.5rem;
+}
+
+// картинка сендвич
+.mob-menu__sandwich-noactive,
+.mob-menu__sandwich-active {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  left: calc(50% - .75rem);
+  top: calc(50% - .75rem);
+
+}
+
+// картинка крестик
+.mob-menu__sandwich-active {
+  opacity: 0;
+}
+
+// активный сендвич становится крестиком
+.active {
+
+  // картинка сендвич
+  .mob-menu__sandwich-noactive {
+    opacity: 0;
+  }
+
+  // картинка крестик
+  .mob-menu__sandwich-active {
+    opacity: 1;
+  }
 }
