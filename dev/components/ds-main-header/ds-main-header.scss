@@ -7,6 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
 }
 
 // обертка
@@ -37,6 +38,7 @@
   flex-grow: 0;
   position: relative;
   width: 3.5rem;
+  cursor: pointer;
 }
 
 // картинка сендвич
@@ -47,7 +49,6 @@
   position: absolute;
   left: calc(50% - .75rem);
   top: calc(50% - .75rem);
-
 }
 
 // картинка крестик

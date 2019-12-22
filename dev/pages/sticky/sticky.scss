@@ -1,0 +1,33 @@
+// секция для демонстрации стика
+.sticky-section {
+}
+
+// верхний блок со стик блоком
+.sticky-section__top-container {
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+// блок стик
+.sticky-section__fixed-block {
+  position: sticky;
+  top: 7rem;
+  width: 15rem;
+  height: 20rem;
+  background-color: red;
+}
+
+// большой блок для прокрутки страницы
+.sticky-section__scroll-block {
+  width: 10rem;
+  height: 100rem;
+  background-color: blue;
+}
+
+// нижний блок для работы стика
+.sticky-section__bottom-container {
+  width: 100%;
+  height: 100rem;
+  background-color: green;
+}

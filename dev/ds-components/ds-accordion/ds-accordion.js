@@ -1,14 +1,15 @@
 /* eslint-disable func-names */
-/* -- DS-ACCORDION v.1.0.2
-  В планах:
-    - входящий конфиг должен перебивать дефолтный конфиг
-    - входящий конфиг с вариантами анимации модалки
-  Сделано:
-    - сворачивание всех аккордионов при открытии любого
+/*
+ds-accordion v.1.0.2 для faq
+автор shkredovdmitriy@gmail.com
+Сделано:
+  - сворачивание всех аккордионов при открытии любого
+В планах:
+  - входящий конфиг должен перебивать дефолтный конфиг
 */
 
-const dsAccordion = (function($) {
-  // -- КОНФИГУРАЦИЯ МОДУЛЯ
+function dsAccordion() {
+  // -- КОНФИГУРАЦИЯ
   // -- конфиг по умолчанию
   const config = {
     mainContainer: '.ds-accordion', // контейнер компонента
@@ -16,7 +17,6 @@ const dsAccordion = (function($) {
     activeClass: 'active', // класс на раскрытом аккордионе
     logging: false, // вывод данных в console.log, true / false
   };
-  // -- объединение дефолтного и входящего конфига
 
   // -- ПЕРЕМЕННЫЕ
   let state = 0; // состояние модуля, 0 - закрыт, 1 - открыт
@@ -71,4 +71,7 @@ const dsAccordion = (function($) {
   return {
     state,
   };
-}(jQuery));
+}
+
+// экспортируем
+export { dsAccordion };

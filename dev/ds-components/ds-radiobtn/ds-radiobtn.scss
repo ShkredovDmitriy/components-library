@@ -6,11 +6,10 @@
 .ds-radiobtn {
   padding-top: .5rem;
   padding-bottom: .5rem;
-  color: #979797;
 }
 
 // прячем html радио баттон
-.ds-radiobtn__radio-button {
+.ds-radiobtn__html-radiobtn {
   position: absolute;
   width: 0;
   height: 0;
@@ -26,36 +25,35 @@
 }
 
 // стилизованная точка
-.ds-radiobtn__radio-button ~ .ds-radiobtn__span {
+.ds-radiobtn__html-radiobtn ~ .ds-radiobtn__span {
+  position: absolute;
+  top: -.125rem;
+  left: 0;
   width: 1.375rem;
-    height: 1.375rem;
-    left: 0;
-    top: -0.125rem;
-    position: absolute;
-
+  height: 1.375rem;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("./images/ds-radiobtn__unchecked-img.svg");
+    background-image: url("./ds-radiobtn__unchecked-img.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
   }
 
   &::after {
-    background-image: url("./images/ds-radiobtn__checked-img.svg");
+    background-image: url("./ds-radiobtn__checked-img.svg");
     opacity: 0;
   }
 }
 
 // активная точка
-.ds-radiobtn__radio-button:checked ~ .ds-radiobtn__span {
+.ds-radiobtn__html-radiobtn:checked ~ .ds-radiobtn__span {
 
   &::before {
     opacity: 0;
@@ -67,22 +65,21 @@
 }
 
 // ошибка
-.error .ds-radiobtn__radio-button ~ .ds-radiobtn__span {
+.error .ds-radiobtn__html-radiobtn ~ .ds-radiobtn__span {
 
   &::before {
-    background-image: url("./images/ds-radiobtn__error-img.svg");
+    background-image: url("./ds-radiobtn__error-img.svg");
   }
 }
 
-.error .ds-radiobtn__radio-button:checked ~ .ds-radiobtn__span {
+.error .ds-radiobtn__html-radiobtn:checked ~ .ds-radiobtn__span {
 
   &::before {
     opacity: 0;
   }
 }
 
-
 // меняем цвет текста на красный если есть класс .error
-.ds-radiobtn.error .ds-radiobtn__label {
-color: red;
+.error .ds-radiobtn__label {
+  color: red;
 }
