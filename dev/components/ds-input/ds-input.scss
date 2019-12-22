@@ -12,6 +12,7 @@
   width: 100%;
 }
 
+// label надпись над полем
 .ds-input__label {
   display: block;
   padding-bottom: .5rem;
@@ -26,6 +27,10 @@
 
 // поле ввода текста
 .ds-input__field {
+  @include placeholder {
+    color: #848484;
+    opacity: 1;
+  }
   padding-top: .5rem;
   padding-right: 1rem;
   padding-bottom: .5rem;

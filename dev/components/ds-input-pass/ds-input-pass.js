@@ -1,5 +1,7 @@
 /* eslint-disable func-names */
 
+// меняем тип поля при клике на глаз
+
 const dsInputPass = (function($) {
   $('.ds-input-pass').each((i, element) => {
     let status = 0;

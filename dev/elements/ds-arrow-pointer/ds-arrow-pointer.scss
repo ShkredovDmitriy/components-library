@@ -5,11 +5,14 @@
   right: .25em;
   width: 1.5em;
   height: 1.5em;
+  background: url("../images/arrow-down-1.svg") no-repeat;
+  background: url("../images/arrow-bottom.svg") no-repeat;
+  background-position: center;
+  background-position: center;
+  background-size: 67% auto;
+  background-size: 1em auto;
   font-size: 1em;
   transition: transform 100ms;
-  background: url('../images/arrow-bottom.svg') no-repeat;
-  background-size: 1em auto;
-  background-position: center;
 }
 
 // .ds-arrow-pointer:before,
