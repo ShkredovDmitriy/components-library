@@ -40,3 +40,8 @@ a:hover {
   text-decoration: none;
   color: #000000;
 }
+
+// убираем выделение желтым цветом в хроме и сафари
+input {
+  outline: none;
+}

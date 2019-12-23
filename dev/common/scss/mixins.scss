@@ -1,12 +1,10 @@
-// запрещаем выделение овьектов
+// запрещаем выделение обьектов
 @mixin user-select-none() {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-
-// универсальный градиент
 
 // стилизация placeholder
 @mixin placeholder {
