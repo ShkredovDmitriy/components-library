@@ -15,6 +15,9 @@ import '../components/ds-textarea/ds-textarea';
 
 import '../components/ds-mob-menu/ds-mob-menu';
 
+// запускаем компоненты
+dsAccordion({ openOne: '.ds-accordion-list-03' });
+
 // подключаем полифиллы
 require('./polyfills/polyfills');
 

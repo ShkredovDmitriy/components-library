@@ -138,7 +138,7 @@ module.exports = function(env, argv) {
     return merge([common, extractCSS()]);
   }
   if (argv.mode === 'development') {
-    return merge([common, devserver(), sass(), css()]);
+    return merge([common, devserver(), sass(), css(), sourceMap()]);
   }
 };
 
