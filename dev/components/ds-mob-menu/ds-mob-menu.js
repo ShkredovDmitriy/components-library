@@ -3,7 +3,7 @@
 const dsMobMenu = (function($) {
   let state = 0;
 
-  $('.ds-mob-menu-btn').click(function() {
+  $('.mob-menu__sandwich').click(function() {
     if (state === 0) {
       this.classList.add('active');
       $('.ds-mob-menu').addClass('active');

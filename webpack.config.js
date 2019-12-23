@@ -1,9 +1,9 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CopyPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
@@ -53,15 +53,10 @@ const common = merge([
       filename: './js/[name].js?[hash]',
     },
     plugins: [
-      new BundleAnalyzerPlugin(),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        _: 'lodash',
-      }),
       new webpack.ProvidePlugin({
         Promise: 'es6-promise-promise',
       }),
+      new Dotenv(),
       new WriteFilePlugin(),
       new CopyPlugin([
         {
@@ -93,6 +88,11 @@ const common = merge([
         {
           from: 'dev/**/*.docx',
           to: 'documents',
+          flatten: true,
+        },
+        {
+          from: 'dev/app/libs/**/*.js',
+          to: 'js',
           flatten: true,
         },
       ]),
@@ -138,6 +138,15 @@ module.exports = function(env, argv) {
     return merge([common, extractCSS()]);
   }
   if (argv.mode === 'development') {
-    return merge([common, devserver(), sass(), css(), sourceMap()]);
+    return merge([common, devserver(), sass(), css()]);
   }
 };
+
+// module.exports = function(env, argv) {
+//   if (argv.mode === 'production') {
+//     return merge([common, extractCSS(), sourceMap()]);
+//   }
+//   if (argv.mode === 'development') {
+//     return merge([common, devserver(), sass(), css(), sourceMap()]);
+//   }
+// };

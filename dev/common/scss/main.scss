@@ -5,10 +5,7 @@
 @import "./mixins.scss";
 
 // -- сброс стилей
-@import "./ds-reset.scss";
-
-// медиа запросы
-@import "./ds-media.scss";
+@import "./layout.scss";
 
 // -- стили элементов
 @import "../../elements/ds-mob-menu-btn/ds-mob-menu-btn.scss";
@@ -36,12 +33,6 @@
 
 @import "../../components/ds-textarea/ds-textarea.scss";
 
-@import "../../components/ds-checkbox/ds-checkbox.scss";
-
-@import "../../components/ds-accordion/ds-accorgion.scss";
-
-@import "../../components/ds-checkbox2/ds-checkbox2.scss";
-
 @import "../../components/ds-mob-menu/ds-mob-menu.scss";
 
 // -- стили страниц
@@ -49,3 +40,5 @@
 @import "../../pages/form/form.scss";
 
 @import "../../pages/accordion/accordion.scss";
+
+@import "../../pages/sticky/sticky.scss";
