@@ -5,7 +5,7 @@ import '../common/scss/main.scss';
 import '../ds-components/ds-components-scss';
 
 // подключаем ds библиотеку js
-import { dsTruncateHtml, dsAccordion } from '../ds-components/ds-components-js';
+import { dsTruncateHtml, dsAccordion, dsInputFile } from '../ds-components/ds-components-js';
 
 // импортируем компоненты
 import '../components/ds-modal/ds-modal';
@@ -19,6 +19,7 @@ require('./polyfills/polyfills');
 
 // запускаем компоненты
 dsAccordion({ openOne: '.ds-accordion-list-03' });
+dsInputFile();
 
 // активируем функции
 dsTruncateHtml('.test', 10);

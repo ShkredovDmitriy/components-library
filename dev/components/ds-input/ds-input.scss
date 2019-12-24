@@ -1,10 +1,9 @@
-// ds-input
-// поле ввода текста, например Имя или Фамилия
-
 /*
-  Интерактив:
-    - .ds-input.active отображает красную рамку
-    - .ds-input.active отображает helper-text
+ds-input
+
+Интерактив:
+  - .ds-input.active отображает красную рамку
+  - .ds-input.active отображает helper-text
 */
 
 // главный контейнер
@@ -31,6 +30,7 @@
     color: #848484;
     opacity: 1;
   }
+
   padding-top: .5rem;
   padding-right: 1rem;
   padding-bottom: .5rem;

@@ -1,0 +1,81 @@
+/*
+ds-input-file
+стилизованный input file
+
+Интерактив:
+  - .ds-input-file.active отображает красную рамку
+  - .ds-input-file.active отображает helper-text
+*/
+
+// главный контейнер
+.ds-input-file {
+  width: 100%;
+  max-width: 31.25rem;
+}
+
+// надпись над полем
+.ds-input-file__label-title {
+  display: block;
+  padding-bottom: .5rem;
+  font-size: 1rem;
+  color: #848484;
+}
+
+// лейбл стилизованный под поле
+.ds-input-file__label {
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid #d8d8d8;
+  border-radius: .375rem;
+  font-size: .875rem;
+  font-size: .8125rem;
+  color: #252525;
+  color: #979797;
+  cursor: pointer;
+  outline: none;
+}
+
+// кнопка загрузки
+.ds-input-file__button {
+  flex-grow: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 4.5rem;
+  height: 100%;
+  border-top-right-radius: .37rem;
+  border-bottom-right-radius: .37rem;
+  background-color: #d8d8d8;
+  color: #000000;
+}
+
+// название загруженного файла
+.ds-input-file__file-name {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  width: calc(100% - 5.5rem);
+  height: 100%;
+  overflow: hidden;
+}
+
+// скрываем оригинальный input
+.ds-input-file__html-field {
+  display: none;
+}
+
+// меняем цвет рамки поля на красный если есть класс .error
+.ds-input.error .ds-input__field {
+  border: .15rem solid red;
+}
+
+// отображаем helper-text если есть класс .error
+.ds-input.error .helper-text {
+  display: block;
+}

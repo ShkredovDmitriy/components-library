@@ -1,10 +1,10 @@
-// ds-select
-// стилизованный html select
-
 /*
-  Интерактив:
-    - .ds-select.active отображает красную рамку
-    - .ds-select.active отображает helper-text
+ds-select
+стилизованный html select
+
+Интерактив:
+  - .ds-select.active отображает красную рамку
+  - .ds-select.active отображает helper-text
 */
 
 // -- главный блок компонента
@@ -16,7 +16,7 @@
   line-height: 1.2;
 }
 
-// -- html select на основе которого создается компонент
+// -- скрываем оригинальный html select
 .ds-select__html-select {
   display: none;
 }
