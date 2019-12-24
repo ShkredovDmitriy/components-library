@@ -21,7 +21,7 @@ function dsAccordion(configIncoming) {
   };
 
   // -- входящий конфиг перебивает дефолтный
-  const config = Object.assign(configDefault, configIncoming);
+  const config = Object.assign({}, configDefault, configIncoming);
 
   // -- ХЕЛПЕРЫ
   // -- логгирование

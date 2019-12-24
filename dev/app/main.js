@@ -12,14 +12,13 @@ import '../components/ds-modal/ds-modal';
 import '../components/ds-select/ds-select';
 import '../components/ds-input-pass/ds-input-pass';
 import '../components/ds-textarea/ds-textarea';
-
 import '../components/ds-mob-menu/ds-mob-menu';
-
-// запускаем компоненты
-dsAccordion({ openOne: '.ds-accordion-list-03' });
 
 // подключаем полифиллы
 require('./polyfills/polyfills');
+
+// запускаем компоненты
+dsAccordion({ openOne: '.ds-accordion-list-03' });
 
 // активируем функции
 dsTruncateHtml('.test', 10);

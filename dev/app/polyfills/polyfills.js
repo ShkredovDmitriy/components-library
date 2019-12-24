@@ -9,11 +9,5 @@ import Stickyfill from './stickyfill';
 const stickyBlock = document.querySelectorAll('.sticky-block');
 Stickyfill.add(stickyBlock);
 
-// подключаем forEach полифилл, не требует активации
-require('./forEachPolyfill');
-
 // подключаем matches полифил, не требует активации
 require('./matchesPolyfill');
-
-// подключаем object.assign полифил, не требует активации
-require('./objectAssignPolyfill');
