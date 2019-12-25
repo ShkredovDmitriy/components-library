@@ -32,7 +32,7 @@ function dsInputFile(configIncoming) {
     inputFileField.addEventListener('change', e => {
       const inputFileValue = inputFileField.value.split(/(\\|\/)/g).pop();
       element.querySelector(config.fileNameBlock).innerHTML = inputFileValue;
-      log(` новое значение - ${inputFileValue}`);
+      log(`value = ${inputFileValue}`);
     });
   });
 
