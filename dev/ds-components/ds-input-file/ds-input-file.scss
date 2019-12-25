@@ -9,6 +9,7 @@ ds-input-file
 
 // главный контейнер
 .ds-input-file {
+  margin: .5rem;
   width: 100%;
   max-width: 31.25rem;
 }
@@ -17,7 +18,8 @@ ds-input-file
 .ds-input-file__label-title {
   display: block;
   padding-bottom: .5rem;
-  font-size: 1rem;
+  padding-left: .5rem;
+  font-size: .875rem;
   color: #848484;
 }
 
@@ -29,8 +31,6 @@ ds-input-file
   display: flex;
   width: 100%;
   height: 2.5rem;
-  border: 1px solid #d8d8d8;
-  border-radius: .375rem;
   font-size: .875rem;
   font-size: .8125rem;
   color: #252525;
@@ -53,16 +53,27 @@ ds-input-file
   color: #000000;
 }
 
-// название загруженного файла
-.ds-input-file__file-name {
+// контейнер для название загруженного файла
+.ds-input-file__file-name-container {
   justify-content: flex-start;
   align-items: center;
   display: flex;
-  margin-right: 1rem;
-  padding-left: 1rem;
-  width: calc(100% - 5.5rem);
+  padding-right: .5rem;
+  padding-left: .5rem;
+  width: calc(100% - 4.5rem);
   height: 100%;
+  border: 1px solid #d8d8d8;
+  border-top-left-radius: .37rem;
+  border-bottom-left-radius: .37rem;
+  font-size: .875rem;
+}
+
+// название загруженного файла
+.ds-input-file__file-name {
+  width: 100%;
+  text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 // скрываем оригинальный input
@@ -70,12 +81,16 @@ ds-input-file
   display: none;
 }
 
-// меняем цвет рамки поля на красный если есть класс .error
-.ds-input.error .ds-input__field {
-  border: .15rem solid red;
+// .error - добавляем красную рамку
+.ds-input-file.error .ds-input-file__label {
+  border: 1px solid red;
+  border-radius: .375rem;
 }
 
-// отображаем helper-text если есть класс .error
-.ds-input.error .helper-text {
+// .error - отображем helper-text
+.ds-input-file.error .helper-text {
   display: block;
+  margin-top: .25rem;
+  padding-left: .5rem;
+  font-size: .75rem;
 }

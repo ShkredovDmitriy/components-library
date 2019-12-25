@@ -5,8 +5,27 @@ block content
 
         .ds-input-file
             .ds-input-file__label-title Прикрепите фото
-            label.ds-input-file__label(for="dsInputFile")
-                .ds-input-file__file-name ...
+            label.ds-input-file__label(for="dsInputFile1")
+                .ds-input-file__file-name-container
+                    .ds-input-file__file-name ...
                 .ds-input-file__button Обзор
-                input.ds-input-file__html-field(id="dsInputFile" type="file")
+                input.ds-input-file__html-field(id="dsInputFile1" type="file")
+            .helper-text введите имя
+        
+        .ds-input-file.error
+            .ds-input-file__label-title Прикрепите фото
+            label.ds-input-file__label(for="dsInputFile2")
+                .ds-input-file__file-name-container
+                    .ds-input-file__file-name ...
+                .ds-input-file__button Обзор
+                input.ds-input-file__html-field(id="dsInputFile2" type="file")
+            .helper-text выберите файл
+
+        .ds-input-file.x3
+            .ds-input-file__label-title Прикрепите фото
+            label.ds-input-file__label(for="dsInputFile3")
+                .ds-input-file__file-name-container
+                    .ds-input-file__file-name ...
+                .ds-input-file__button Обзор
+                input.ds-input-file__html-field(id="dsInputFile3" type="file")
             .helper-text введите имя

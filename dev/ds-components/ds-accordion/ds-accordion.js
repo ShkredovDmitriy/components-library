@@ -10,7 +10,6 @@ ds-accordion v.1.0.2 для faq
 
 function dsAccordion(configIncoming) {
   // -- КОНФИГУРАЦИЯ
-
   // -- конфиг по умолчанию
   const configDefault = {
     mainContainer: '.ds-accordion', // контейнер компонента
@@ -36,7 +35,7 @@ function dsAccordion(configIncoming) {
     return document.querySelectorAll(cls);
   };
 
-  // -- МАНИПУЛЯЦИИ С CLASSLIST
+  // -- ОСНОВНОЙ ФУНКЦИОНАЛ
   // -- закрываем все аккордионы
   const closeAllAccordions = function() {
     qa(config.mainContainer).forEach(element => {

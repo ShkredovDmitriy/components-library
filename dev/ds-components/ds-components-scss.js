@@ -1,8 +1,11 @@
-// /////////////////////////////////
-// бибоиотека компонентов
-// автор shkredovdmitriy@gmail.com
-// 2018 - 2020
-// /////////////////////////////////
+/*
+бибоиотека компонентов
+автор shkredovdmitriy@gmail.com
+2018 - 2020
+*/
+
+// хелперы
+import './helpers-scss/text-overflow-elipsis.scss'; // обрезка текста + ...
 
 // компоненты
 import './ds-radiobtn/ds-radiobtn.scss'; // стилизованная радио кнопка

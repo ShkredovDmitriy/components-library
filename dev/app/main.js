@@ -19,7 +19,7 @@ require('./polyfills/polyfills');
 
 // запускаем компоненты
 dsAccordion({ openOne: '.ds-accordion-list-03' });
-dsInputFile();
+dsInputFile({ logging: true });
 
 // активируем функции
 dsTruncateHtml('.test', 10);
