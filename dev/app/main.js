@@ -11,7 +11,6 @@ import { dsTruncateHtml, dsAccordion, dsInputFile } from '../ds-components/ds-co
 import '../components/ds-modal/ds-modal';
 import '../components/ds-select/ds-select';
 import '../components/ds-input-pass/ds-input-pass';
-import '../components/ds-textarea/ds-textarea';
 import '../components/ds-mob-menu/ds-mob-menu';
 
 // подключаем полифиллы
