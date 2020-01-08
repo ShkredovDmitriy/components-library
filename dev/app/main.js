@@ -5,7 +5,12 @@ import '../common/scss/main.scss';
 import '../ds-components/ds-components-scss';
 
 // подключаем ds библиотеку js
-import { dsTruncateHtml, dsAccordion, dsInputFile } from '../ds-components/ds-components-js';
+import {
+  dsTruncateHtml,
+  dsAccordion,
+  dsAccordionManual,
+  dsInputFile,
+} from '../ds-components/ds-components-js';
 
 // импортируем компоненты
 import '../components/ds-modal/ds-modal';
@@ -17,7 +22,8 @@ import '../components/ds-mob-menu/ds-mob-menu';
 require('./polyfills/polyfills');
 
 // запускаем компоненты
-dsAccordion({ openOne: '.ds-accordion-list-03' });
+dsAccordion({ mainContainer: '.ds-accordion' });
+dsAccordionManual('.ds-accordion-list-03');
 dsInputFile({ logging: true });
 
 // активируем функции
