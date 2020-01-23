@@ -10,6 +10,7 @@ import {
   dsAccordion,
   dsAccordionManual,
   dsInputFile,
+  ds,
 } from '../ds-components/ds-components-js';
 
 // импортируем компоненты
@@ -22,9 +23,14 @@ import '../components/ds-mob-menu/ds-mob-menu';
 require('./polyfills/polyfills');
 
 // запускаем компоненты
-dsAccordion({ mainContainer: '.ds-accordion' });
-dsAccordionManual('.ds-accordion-list-03');
+dsAccordion({ logging: true, mainContainer: '.ds-accordion' });
+dsAccordion({ logging: true, mainContainer: '.ds-accordion2' });
+dsAccordionManual({ logging: true, openOne: '.ds-accordion-list-03' });
 dsInputFile({ logging: true });
 
 // активируем функции
 dsTruncateHtml('.test', 10);
+
+// выполняем тест
+ds();
+ds('info');

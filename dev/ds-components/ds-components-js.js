@@ -4,7 +4,10 @@ import { dsTruncateStr, dsTruncateHtml } from './helpers-js/ds-truncate'; // о�
 // компоненты
 import { dsAccordion, dsAccordionManual } from './ds-accordion/ds-accordion'; // js - аккордион для faq
 
-import { dsInputFile } from './ds-input-file/ds-input-file'; // js - стилизованный input file
+import { dsInputFile } from './ds-input-file/ds-input-file';
+
+// импортируем тестовую библиотеку
+import ds from './test/test'; // js - стилизованный input file
 
 // экспортируем нужные функции
-export { dsTruncateStr, dsTruncateHtml, dsAccordion, dsAccordionManual, dsInputFile };
+export { dsTruncateStr, dsTruncateHtml, dsAccordion, dsAccordionManual, dsInputFile, ds };
