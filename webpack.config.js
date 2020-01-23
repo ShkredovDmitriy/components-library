@@ -135,7 +135,7 @@ const common = merge([
 
 module.exports = function(env, argv) {
   if (argv.mode === 'production') {
-    return merge([common, extractCSS()]);
+    return merge([common, extractCSS(), sourceMap()]);
   }
   if (argv.mode === 'development') {
     return merge([common, devserver(), sass(), css(), sourceMap()]);

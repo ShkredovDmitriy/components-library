@@ -10,11 +10,10 @@ import {
   dsAccordion,
   dsAccordionManual,
   dsInputFile,
-  ds,
+  dsModal,
 } from '../ds-components/ds-components-js';
 
 // импортируем компоненты
-import '../components/ds-modal/ds-modal';
 import '../components/ds-select/ds-select';
 import '../components/ds-input-pass/ds-input-pass';
 import '../components/ds-mob-menu/ds-mob-menu';
@@ -31,6 +30,26 @@ dsInputFile({ logging: true });
 // активируем функции
 dsTruncateHtml('.test', 10);
 
-// выполняем тест
-ds();
-ds('info');
+// модалка инфо
+const modalInfo = new dsModal({
+  container: '.modal-info',
+  openButton: '.modal-info-open',
+  closeButton: '.modal-info-close',
+});
+modalInfo.init();
+
+// модалка сообщение
+const modalMessage = new dsModal({
+  container: '.modal-message',
+  openButton: '.modal-message-open',
+  closeButton: '.modal-message-close',
+});
+modalMessage.init();
+
+// модалка ошибка
+const modalError = new dsModal({
+  container: '.modal-error',
+  openButton: '.modal-error-open',
+  closeButton: '.modal-error-close',
+});
+modalError.init();

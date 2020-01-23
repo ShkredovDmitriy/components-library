@@ -8,6 +8,7 @@
 import './helpers-scss/text-overflow-elipsis.scss'; // обрезка текста + ...
 
 // компоненты
+import './ds-modal/ds-modal.scss'; // стили - модальное окно
 import './ds-radiobtn/ds-radiobtn.scss'; // стилизованная радио кнопка
 import './ds-checkbox/ds-checkbox.scss'; // стилизованный чекбокс
 import './ds-input-file/ds-input-file.scss'; // стили поля ввода файла

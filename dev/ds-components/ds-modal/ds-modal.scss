@@ -40,7 +40,6 @@ _:-ms-fullscreen,
 
 /* само модальное окно */
 .ds-modal__body {
-  @include user-select-none();
   position: relative;
   padding: 4.5rem 1.7rem 3.8rem;
   width: 100%;
