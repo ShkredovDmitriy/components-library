@@ -1,6 +1,6 @@
 /* eslint-disable func-names */
 /*
-ds-accordion v.1.0.2 для faq
+ds-accordion v.1.2 для faq
 автор shkredovdmitriy@gmail.com
 Сделано:
   - сворачивание всех аккордионов при открытии одного
@@ -15,74 +15,77 @@ const configDefault = {
   dropdownBlock: '.ds-accordion__dropdown', // выпадающий блок
   activeClass: 'active', // класс на раскрытом аккордионе
   openOne: '', // раскрываем нужный аккордион по уникальному классу
-  logging: true, // вывод данных в console.log, true / false
+  logging: false, // вывод данных в console.log, true / false
 };
-
-// -- конфиг с учетом входящих параметров
-let config = {};
 
 // -- ХЕЛПЕРЫ
 // -- логгирование
-const log = function(mes) {
+function log(config, mes) {
   if (config.logging) {
     console.log(`ds-accordion: ${mes}`);
   }
-};
+}
 
 // -- короткий селектор
-const qa = function(cls) {
+function qa(cls) {
   return document.querySelectorAll(cls);
-};
+}
 
 // -- ОСНОВНОЙ ФУНКЦИОНАЛ
 // -- закрываем все аккордионы
-const closeAllAccordions = function() {
+function closeAllAccordions(config) {
   qa(config.mainContainer).forEach(element => {
     element.classList.remove(config.activeClass);
     const panel = element.querySelector(config.dropdownBlock);
     panel.style.maxHeight = 0;
   });
-};
+}
 
 // -- раскрываем один аккордион
-const openCurrentAccordion = function(element) {
+function openCurrentAccordion(config, element) {
   if (element.classList.contains(config.activeClass)) {
-    closeAllAccordions();
+    closeAllAccordions(config);
   } else {
-    closeAllAccordions();
+    closeAllAccordions(config);
     element.classList.add(config.activeClass);
     const panel = element.querySelector(config.dropdownBlock);
     panel.style.maxHeight = `${panel.scrollHeight}px`;
   }
-};
+}
 
 // -- работа аккордиона в автоматическом режиме
 // -- раскрываем аккордионы по событию клик
 function dsAccordion(configIncoming) {
   // -- входящий конфиг перебивает дефолтный
-  config = Object.assign({}, configDefault, configIncoming);
+  const config = Object.assign({}, configDefault, configIncoming);
 
   // -- подписка на клик для раскрытия аккордиона
   (function() {
     qa(config.mainContainer).forEach(element => {
       element.addEventListener('click', e => {
-        openCurrentAccordion(element);
+        openCurrentAccordion(config, element);
       });
     });
   }());
 
   // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
-  log('started');
+  log(config, 'started');
 }
 
 // -- работа аккордиона в ручном режиме
 // -- раскрываем нужный аккордион по уникальному классу
-function dsAccordionManual(openClass) {
-  if (document.querySelector(openClass)) {
+function dsAccordionManual(configIncoming) {
+  // -- входящий конфиг перебивает дефолтный
+  const config = Object.assign({}, configDefault, configIncoming);
+
+  if (document.querySelector(config.openOne)) {
     setTimeout(() => {
-      openCurrentAccordion(document.querySelector(openClass));
+      openCurrentAccordion(config, document.querySelector(config.openOne));
     }, 300);
   }
+
+  // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
+  log(config, 'started in manual mode');
 }
 
 // экспортируем
