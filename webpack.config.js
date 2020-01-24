@@ -75,6 +75,11 @@ const common = merge([
           flatten: true,
         },
         {
+          from: 'dev/**/*.webp',
+          to: 'images/',
+          flatten: true,
+        },
+        {
           from: 'dev/**/*.svg',
           to: 'images/',
           // test: /([^/]+)\/(.+)\.(jpg|png|svg)$/,
