@@ -1,9 +1,12 @@
 extends ../../templates/blazy
 
+include ../../common/pug/mixins.pug
+
 block variables
     - var pageClass = 'blazy-page'
 
 block content
+    
     .section.section-1
         img(data-src="./images/lazy-img-11.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
         img(data-src="./images/lazy-img-12.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
@@ -12,40 +15,11 @@ block content
         img(data-src="./images/lazy-img-15.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
     
     .section.section-2
-        picture
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.webp" media="(max-width: 500px)" type="image/webp")
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.png" media="(max-width: 500px)" type="image/png")
-            source(data-srcset="./images/lazy-img-21.webp" type="image/webp")
-            source(data-srcset="./images/lazy-img-21.jpg" type="image/jpeg")
-            img.b-lazy(data-src="./images/lazy-img-21.jpg" src="./images/cogwheel-icon-.svg", alt="")
-        
-        picture
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.webp" media="(max-width: 500px)" type="image/webp")
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.png" media="(max-width: 500px)" type="image/png")
-            source(data-srcset="./images/lazy-img-22.webp" type="image/webp")
-            source(data-srcset="./images/lazy-img-22.jpg" type="image/jpeg")
-            img.b-lazy(data-src="./images/lazy-img-22.jpg" src="./images/cogwheel-icon-.svg", alt="")
-
-        picture
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.webp" media="(max-width: 500px)" type="image/webp")
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.png" media="(max-width: 500px)" type="image/png")
-            source(data-srcset="./images/lazy-img-23.webp" type="image/webp")
-            source(data-srcset="./images/lazy-img-23.jpg" type="image/jpeg")
-            img.b-lazy(data-src="./images/lazy-img-23.jpg" src="./images/cogwheel-icon-.svg", alt="")
-        
-        picture
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.webp" media="(max-width: 500px)" type="image/webp")
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.png" media="(max-width: 500px)" type="image/png")
-            source(data-srcset="./images/lazy-img-24.webp" type="image/webp")
-            source(data-srcset="./images/lazy-img-24.jpg" type="image/jpeg")
-            img.b-lazy(data-src="./images/lazy-img-24.jpg" src="./images/cogwheel-icon-.svg", alt="")
-        
-        picture
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.webp" media="(max-width: 500px)" type="image/webp")
-            //- source(data-srcset="./images/fourth-screen__tablet-pack-img-mob.png" media="(max-width: 500px)" type="image/png")
-            source(data-srcset="./images/lazy-img-25.webp" type="image/webp")
-            source(data-srcset="./images/lazy-img-25.jpg" type="image/jpeg")
-            img.b-lazy(data-src="./images/lazy-img-25.jpg" src="./images/cogwheel-icon-.svg", alt="")
+        +lazyPicture({jpeg: 1, img: 'lazy-img-21', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-22', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-23', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-24', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-25', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
    
     .section.section-3
         img(data-src="./images/lazy-img-31.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
@@ -53,3 +27,6 @@ block content
         img(data-src="./images/lazy-img-33.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
         img(data-src="./images/lazy-img-34.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
         img(data-src="./images/lazy-img-35.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+    
+    .section.section-4
+        .some-bg-container1.b-lazy
