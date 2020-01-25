@@ -25,7 +25,10 @@ require('./polyfills/polyfills');
 dsAccordion({ logging: true, mainContainer: '.ds-accordion' });
 dsAccordion({ logging: true, mainContainer: '.ds-accordion2' });
 dsAccordionManual({ logging: true, openOne: '.ds-accordion-list-03' });
-dsInputFile({ logging: true });
+
+// стилизуем инпут файл
+const inputFile = new dsInputFile({ logging: true });
+inputFile.init();
 
 // активируем функции
 dsTruncateHtml('.test', 10);
