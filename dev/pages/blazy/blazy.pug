@@ -1,0 +1,32 @@
+extends ../../templates/blazy
+
+include ../../common/pug/mixins.pug
+
+block variables
+    - var pageClass = 'blazy-page'
+
+block content
+    
+    .section.section-1
+        img(data-src="./images/lazy-img-11.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-12.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-13.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-14.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-15.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+    
+    .section.section-2
+        +lazyPicture({jpeg: 1, img: 'lazy-img-21', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-22', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-23', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-24', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+        +lazyPicture({jpeg: 1, img: 'lazy-img-25', def: 'cogwheel-icon-.svg', mob: 500, tab: 1024})
+   
+    .section.section-3
+        img(data-src="./images/lazy-img-31.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-32.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-33.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-34.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+        img(data-src="./images/lazy-img-35.jpg", src="./images/cogwheel-icon-.svg", alt="").b-lazy
+    
+    .section.section-4
+        .some-bg-container1.b-lazy
