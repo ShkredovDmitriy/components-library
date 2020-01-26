@@ -1,21 +1,18 @@
 // подключаем стили проекта
 import '../common/scss/main.scss';
 
-// подключаем ds библиотеку scss
-import '../ds-components/ds-components-scss';
-
 // подключаем ds библиотеку js
 import {
   dsTruncateHtml,
   dsAccordion,
   dsAccordionManual,
   dsInputFile,
+  dsInputPass,
   dsModal,
-} from '../ds-components/ds-components-js';
+} from '../ds-components/ds-components';
 
 // импортируем компоненты
 import '../components/ds-select/ds-select';
-import '../components/ds-input-pass/ds-input-pass';
 import '../components/ds-mob-menu/ds-mob-menu';
 
 // подключаем полифиллы
@@ -28,9 +25,13 @@ if (document.querySelector('.faq-page')) {
   dsAccordionManual({ logging: true, openOne: '.ds-accordion-list-03' });
 }
 
-// инициализация - форма
+// инициализация - элементов формы
 if (document.querySelector('.form-page')) {
-  dsInputFile({ logging: true });
+  console.log('Form page opened');
+  const inputFile = new dsInputFile({ logging: true });
+  inputFile.init();
+  const inputPass = new dsInputPass({ logging: true });
+  inputPass.init();
   dsTruncateHtml('.test', 10);
 }
 
@@ -63,6 +64,5 @@ if (document.querySelector('.modal-page')) {
 
 if (document.querySelector('.blazy-page')) {
   console.log('Blazy page opened');
+  const bLazy = new Blazy();
 }
-
-const bLazy = new Blazy();

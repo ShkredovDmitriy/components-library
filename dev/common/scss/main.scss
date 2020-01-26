@@ -1,11 +1,11 @@
 // переменные
 @import "./vars.scss";
 
-// миксины
-@import "./mixins.scss";
-
 // -- сброс стилей
 @import "./layout.scss";
+
+// подключаем ds библиотеку scss
+@import "../../ds-components/ds-components.scss";
 
 // -- стили элементов
 @import "../../elements/ds-mob-menu-btn/ds-mob-menu-btn.scss";
@@ -19,26 +19,21 @@
 @import "../../elements/helper-text/helper-text.scss";
 
 // -- стили компонентов
-@import "../../components/dev-menu/dev-menu.scss";
-
 @import "../../components/ds-main-header/ds-main-header.scss";
 
 @import "../../components/ds-select/ds-select.scss";
 
 @import "../../components/ds-input/ds-input.scss";
 
-@import "../../components/ds-input-pass/ds-input-pass.scss";
-
 @import "../../components/ds-mob-menu/ds-mob-menu.scss";
 
 // -- стили страниц
+@import "../../pages/index/index.scss";
 
 @import "../../pages/form/form.scss";
 
 @import "../../pages/faq/faq.scss";
 
 @import "../../pages/sticky/sticky.scss";
-
-@import "../../pages/input-file/input-file.scss";
 
 @import "../../pages/blazy/blazy.scss";

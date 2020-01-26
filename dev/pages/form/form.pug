@@ -1,110 +1,151 @@
 extends ../../templates/index
 
+block variables
+    - var pageClass = 'form-page'
+
 block content
-    form(action="ds-select.html")
 
-        .form-wrapper
-            .ds-input
-                label.ds-input__label Введите Имя
-                .ds-input__wrapper
-                    input.ds-input__field(placeholder="Введите Имя")
-                .helper-text введите имя
+    .section-form
 
-        .form-wrapper
-            .ds-input
-                label.ds-input__label Введите Фамилию
-                .ds-input__wrapper
-                    input.ds-input__field(placeholder="Введите Фамилию")
-                .helper-text введите фамилию
+        form(action="ds-select.html")
 
-        .form-wrapper
-            .ds-input-pass
-                label.ds-input__label Введите пароль
-                .ds-input__wrapper
-                    input.ds-input__field(type="password")
-                    span.ds-input__eye-icon
-                .helper-text введите пароль
+            .form-wrapper
+                .ds-input
+                    label.ds-input__label Введите Имя
+                    .ds-input__wrapper
+                        input.ds-input__field(placeholder="Введите Имя")
+                    .helper-text введите имя
 
-        .form-wrapper
-            .ds-input-pass
-                label.ds-input__label Повторите пароль
-                .ds-input__wrapper
-                    input.ds-input__field(type="password")
-                    span.ds-input__eye-icon
-                .helper-text пароли не совпадают
+            .form-wrapper
+                .ds-input
+                    label.ds-input__label Введите Фамилию
+                    .ds-input__wrapper
+                        input.ds-input__field(placeholder="Введите Фамилию")
+                    .helper-text введите фамилию
+
+            .form-wrapper
+                .ds-input-pass
+                    label.ds-input__label Введите пароль
+                    .ds-input__wrapper
+                        input.ds-input__field(type="password")
+                        span.ds-input__eye-icon
+                    .helper-text введите пароль
+
+            .form-wrapper
+                .ds-input-pass
+                    label.ds-input__label Повторите пароль
+                    .ds-input__wrapper
+                        input.ds-input__field(type="password")
+                        span.ds-input__eye-icon
+                    .helper-text пароли не совпадают
+                    
+
+            .form-wrapper
+                .ds-select
+                    label.ds-input__label Тип запроса
+                    select#dsSelect.ds-select__html-select(name="category1")
+                        option(value="none" selected="true")
+                        option(value="option1") Тип запроса номер два два два
+                        option(value="option2") Тип запроса номер три три три
+                        option(value="option3") Тип запроса номер четыре четыре четыре
+                    .ds-select__selected-option
+                        .ds-select__selected-text Выберите тип запроса
+                        .ds-arrow-pointer
+                    .ds-select__dropdown-option
+                        ul.ds-select__options-list
+                    .helper-text выберите пункт
+
+            .form-wrapper
+
+                .ds-select
+                    label.ds-input__label Тип запроса
+                    select#dsSelect.ds-select__html-select(name="category2")
+                        option(value="none" selected="true")
+                        option(value="option1") Lorem, ipsum dolor ret.
+                        option(value="option2") Lorem ipsum dolor sit amet.
+                        option(value="option3") Lorem ipsum dolor sit amet rew.
+                        option(value="option4") Lorem ipsum dolor sit amet consectetur.
+                    .ds-select__selected-option
+                        .ds-select__selected-text Хххххх ххххх ххх хххххх
+                        .ds-arrow-pointer
+                    .ds-select__dropdown-option
+                        ul.ds-select__options-list
+                    .helper-text выберите пункт
+
+            .form-wrapper
+
+                .ds-select
+                    label.ds-input__label Тип запроса
+                    select#dsSelect.ds-select__html-select(name="category3")
+                        option(value="none" selected="true")
+                        option(value="option1") Lorem ipsum dolor sit amet.
+                        option(value="option2") Lorem ipsum dolor sit amet consectetur.
+                        option(value="option3") Lorem ipsum dolor sit amet rew.
+                    .ds-select__selected-option
+                        .ds-select__selected-text Выберите категорию
+                        .ds-arrow-pointer
+                    .ds-select__dropdown-option
+                        ul.ds-select__options-list
+                    .helper-text выберите пункт
+
+            .form-wrapper
+                .ds-textarea
+                    label.ds-input__label Несколько слов о себе
+                    .ds-input__wrapper
+                        textarea.ds-input__field Несколько слов о себе
+                        .ds-input__field.ds-textarea__hidden-div
+                    .helper-text введите имя
+
+            .form-wrapper
+                .ds-input-file
+                    .ds-input-file__label-title Прикрепите фото
+                    label.ds-input-file__label(for="dsInputFile1")
+                        .ds-input-file__file-name-container
+                            .ds-input-file__file-name ...
+                        .ds-input-file__button Обзор
+                        input.ds-input-file__html-field(id="dsInputFile1" type="file")
+                    .helper-text введите имя
                 
+                .ds-input-file.error
+                    .ds-input-file__label-title Прикрепите фото
+                    label.ds-input-file__label(for="dsInputFile2")
+                        .ds-input-file__file-name-container
+                            .ds-input-file__file-name ...
+                        .ds-input-file__button Обзор
+                        input.ds-input-file__html-field(id="dsInputFile2" type="file")
+                    .helper-text выберите файл
 
-        .form-wrapper
-            .ds-select
-                label.ds-input__label Тип запроса
-                select#dsSelect.ds-select__html-select(name="category1")
-                    option(value="none" selected="true")
-                    option(value="option1") Тип запроса номер два два два
-                    option(value="option2") Тип запроса номер три три три
-                    option(value="option3") Тип запроса номер четыре четыре четыре
-                .ds-select__selected-option
-                    .ds-select__selected-text Выберите тип запроса
-                    .ds-arrow-pointer
-                .ds-select__dropdown-option
-                    ul.ds-select__options-list
-                .helper-text выберите пункт
+                .ds-input-file.x3
+                    .ds-input-file__label-title Прикрепите фото
+                    label.ds-input-file__label(for="dsInputFile3")
+                        .ds-input-file__file-name-container
+                            .ds-input-file__file-name ...
+                        .ds-input-file__button Обзор
+                        input.ds-input-file__html-field(id="dsInputFile3" type="file")
+                    .helper-text введите имя
+            
+            .form-wrapper
+                .ds-checkbox
+                    label.ds-checkbox__label(for="userAgreement") Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        input.ds-checkbox__html-checkbox(type="checkbox" id="userAgreement")
+                        span.ds-checkbox__span
 
-        .form-wrapper
+                .ds-checkbox
+                    label.ds-checkbox__label(for="userPolicy") Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        input.ds-checkbox__html-checkbox(type="checkbox" id="userPolicy")
+                        span.ds-checkbox__span
 
-            .ds-select
-                label.ds-input__label Тип запроса
-                select#dsSelect.ds-select__html-select(name="category2")
-                    option(value="none" selected="true")
-                    option(value="option1") Lorem, ipsum dolor ret.
-                    option(value="option2") Lorem ipsum dolor sit amet.
-                    option(value="option3") Lorem ipsum dolor sit amet rew.
-                    option(value="option4") Lorem ipsum dolor sit amet consectetur.
-                .ds-select__selected-option
-                    .ds-select__selected-text Хххххх ххххх ххх хххххх
-                    .ds-arrow-pointer
-                .ds-select__dropdown-option
-                    ul.ds-select__options-list
-                .helper-text выберите пункт
+            .form-wrapper
+                .ds-radiobtn
+                    label.ds-radiobtn__label(for="dsRadioBtnYes") Да
+                        input.ds-radiobtn__html-radiobtn(type="radio" checked name="dsRadioBtnYesNo" id="dsRadioBtnYes")
+                        span.ds-radiobtn__span
 
-        .form-wrapper
+                .ds-radiobtn
+                    label.ds-radiobtn__label(for="dsRadioBtnNo") Нет
+                        input.ds-radiobtn__html-radiobtn(type="radio" name="dsRadioBtnYesNo" id="dsRadioBtnNo")
+                        span.ds-radiobtn__span
 
-            .ds-select
-                label.ds-input__label Тип запроса
-                select#dsSelect.ds-select__html-select(name="category3")
-                    option(value="none" selected="true")
-                    option(value="option1") Lorem ipsum dolor sit amet.
-                    option(value="option2") Lorem ipsum dolor sit amet consectetur.
-                    option(value="option3") Lorem ipsum dolor sit amet rew.
-                .ds-select__selected-option
-                    .ds-select__selected-text Выберите категорию
-                    .ds-arrow-pointer
-                .ds-select__dropdown-option
-                    ul.ds-select__options-list
-                .helper-text выберите пункт
-
-        .form-wrapper
-            .ds-textarea
-                label.ds-input__label Несколько слов о себе
-                .ds-input__wrapper
-                    textarea.ds-input__field Несколько слов о себе
-                    .ds-input__field.ds-textarea__hidden-div
-                .helper-text введите имя
-
-
-        .form-wrapper
-
-            .ds-checkbox2.error
-                label.ds-checkbox__label
-                    input.ds-checkbox__input(type="checkbox")
-                    .ds-checkbox__sprite-container 
-                    .ds-checkbox__text-container Даю согласие на использование моих персональных данных, даю согласие на использование моих персональных данных
-
-        .form-wrapper
-
-            .ds-checkbox2
-                label.ds-checkbox__label
-                    input.ds-checkbox__input(type="checkbox")
-                    .ds-checkbox__sprite-container 
-                    .ds-checkbox__text-container Даю согласие на использование моих персональных данных, даю согласие на использование моих персональных данных
-        
-            input.ds-submit-button(type="submit" value="Отправить")
+            .form-wrapper
+            
+                input.ds-submit-button(type="submit" value="Отправить")

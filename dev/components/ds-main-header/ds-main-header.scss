@@ -1,13 +1,13 @@
 // главная панель навигации
 .main-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
   padding: 0 1.5rem;
   height: 3.5rem;
   background-color: #ed6d37;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
 }
 
 // обертка
@@ -21,8 +21,8 @@
 
 // ссылка с логотипом
 .main-header__logo-container {
-  display: block;
   flex-grow: 0;
+  display: block;
   width: 10rem;
   height: 2.5rem;
   background-color: #ffffff;
@@ -35,8 +35,8 @@
 
 // кнопка мобильного меню
 .mob-menu__sandwich {
-  flex-grow: 0;
   position: relative;
+  flex-grow: 0;
   width: 3.5rem;
   cursor: pointer;
 }
@@ -44,11 +44,11 @@
 // картинка сендвич
 .mob-menu__sandwich-noactive,
 .mob-menu__sandwich-active {
+  position: absolute;
+  top: calc(50% - .75rem);
+  left: calc(50% - .75rem);
   width: 1.5rem;
   height: 1.5rem;
-  position: absolute;
-  left: calc(50% - .75rem);
-  top: calc(50% - .75rem);
 }
 
 // картинка крестик
@@ -58,7 +58,6 @@
 
 // активный сендвич становится крестиком
 .active {
-
   // картинка сендвич
   .mob-menu__sandwich-noactive {
     opacity: 0;
