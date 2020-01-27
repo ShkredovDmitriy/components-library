@@ -39,6 +39,7 @@ if (document.querySelector('.form-page')) {
 if (document.querySelector('.modal-page')) {
   // модалка инфо
   const modalInfo = new dsModal({
+    logging: true,
     container: '.modal-info',
     openButton: '.modal-info-open',
     closeButton: '.modal-info-close',

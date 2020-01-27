@@ -15,7 +15,7 @@ export default class dsModal {
       animBg: 'fade-in-scale-bg', // второй шаг анимации
       animBody: 'fade-in-scale-body', // третий шаг анимации
       bodyOverflow: 'ds-modal__overflow-hidden', // класс для блокировки скролла
-      logging: true, // вывод данных в console.log, true / false
+      logging: false, // вывод данных в console.log, true / false
     };
     // входящий конфиг заменяет дефолтный
     this.config = Object.assign({}, this.defaultConfig, incomingConfig);
