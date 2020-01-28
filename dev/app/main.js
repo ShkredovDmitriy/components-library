@@ -9,10 +9,13 @@ import {
   dsInputFile,
   dsInputPass,
   dsModal,
+  dsMobileMenu,
 } from '../ds-components/ds-components';
 
 // импортируем компоненты
-import '../components/ds-mob-menu/ds-mob-menu';
+// import '../components/ds-mob-menu/ds-mob-menu';
+const mobileMenu = new dsMobileMenu({ logging: true });
+mobileMenu.init();
 
 // подключаем полифиллы
 require('./polyfills/polyfills');

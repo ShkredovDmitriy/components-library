@@ -6,16 +6,23 @@
 import { dsTruncateHtml } from './helpers-js/ds-truncate'; // обрезка содержимого
 
 // -- компоненты
-import { dsAccordion, dsAccordionManual } from './ds-accordion/ds-accordion'; // js - аккордион для faq
+import { dsAccordion, dsAccordionManual } from './ds-accordion/ds-accordion'; // аккордион для faq
 
-// -- стилизованный выбор файла
-import dsInputFile from './ds-input-file/ds-input-file';
+import dsInputFile from './ds-input-file/ds-input-file'; // -- стилизованный выбор файла
 
-// -- стилизованный ввод пароля
-import dsInputPass from './ds-input-pass/ds-input-pass';
+import dsInputPass from './ds-input-pass/ds-input-pass'; // -- стилизованный ввод пароля
 
-// -- импортируем тестовую библиотеку
-import dsModal from './ds-modal/ds-modal'; // js - стилизованный input file
+import dsModal from './ds-modal/ds-modal'; // -- модальное окно
+
+import dsMobileMenu from './ds-mobile-menu/ds-mobile-menu'; // мобильное меню
 
 // -- экспортируем нужные функции
-export { dsTruncateHtml, dsAccordion, dsAccordionManual, dsInputFile, dsInputPass, dsModal };
+export {
+  dsTruncateHtml,
+  dsAccordion,
+  dsAccordionManual,
+  dsInputFile,
+  dsInputPass,
+  dsModal,
+  dsMobileMenu,
+};

@@ -86,6 +86,7 @@ export default class dsModal {
   init() {
     this._addOpenButtons();
     this._addCloseButtons();
+    // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
     this.log(`initialized, class: ${this.config.container}`);
   }
 }
