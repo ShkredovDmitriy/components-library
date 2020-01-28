@@ -1,15 +1,25 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable class-methods-use-this */
 /* eslint-disable func-names */
-/* -- DS-SELECT v.1.0.2
-  В планах:
-    - входящий конфиг должен перебивать дефолтный конфиг
-    - скролл внутри выпадающего списка
-    - направление выпадения в зависимости от положения на экране
-  Сделано:
-    - работа любого количества селектов от одного js модуля
-*/
 
-const dsSelect = (function($) {
-  // -- КОНФИГУРАЦИЯ МОДУЛЯ
+/* -- DS-SELECT СТИЛИЗОВАННЫЙ HTML SELECT v.2.0.1 */
+
+export default class dsSelect {
+  constructor(incomingConfig) {
+    // конфиг по умолчанию
+    this.defaultConfig = {
+      container: '.modal', // уникальный класс контейнера компонента
+      openButton: '.modal-open', // кнопки для раскрытия модального окна
+      closeButton: '.modal-close', // кнопки для закрытия модального окна
+      animBlock: 'fade-in-scale-block', // первый шаг анимации
+      animBg: 'fade-in-scale-bg', // второй шаг анимации
+      animBody: 'fade-in-scale-body', // третий шаг анимации
+      bodyOverflow: 'ds-modal__overflow-hidden', // класс для блокировки скролла
+      logging: false, // вывод данных в console.log, true / false
+    };
+    // входящий конфиг заменяет дефолтный
+    this.config = Object.assign({}, this.defaultConfig, incomingConfig);
+  }
   // -- конфиг по умолчанию
   const config = {
     mainContainer: '.ds-select', // контейнер компонента

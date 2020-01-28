@@ -12,7 +12,6 @@ import {
 } from '../ds-components/ds-components';
 
 // импортируем компоненты
-import '../components/ds-select/ds-select';
 import '../components/ds-mob-menu/ds-mob-menu';
 
 // подключаем полифиллы
