@@ -10,6 +10,7 @@ import {
   dsInputPass,
   dsModal,
   dsMobileMenu,
+  getUserStatus,
 } from '../ds-components/ds-components';
 
 // импортируем компоненты
@@ -47,6 +48,7 @@ if (document.querySelector('.modal-page')) {
     closeButton: '.modal-info-close',
   });
   modalInfo.init();
+  // document.modalInfo = modalInfo;
 
   // модалка сообщение
   const modalMessage = new dsModal({
@@ -55,6 +57,7 @@ if (document.querySelector('.modal-page')) {
     closeButton: '.modal-message-close',
   });
   modalMessage.init();
+  // document.modalMessage = modalMessage;
 
   // модалка ошибка
   const modalError = new dsModal({
@@ -63,9 +66,17 @@ if (document.querySelector('.modal-page')) {
     closeButton: '.modal-error-close',
   });
   modalError.init();
+  // document.modalError = modalError;
 }
 
 if (document.querySelector('.blazy-page')) {
   console.log('Blazy page opened');
   const bLazy = new Blazy();
 }
+
+// проверка статуся пользователя
+// https://reqres.in/api/login - 400
+// https://reqres.in/api/users/23 - 404
+// https://reqres.in/api/users/2 - 204
+
+getUserStatus('https://reqres.in/api/login', dsModal);

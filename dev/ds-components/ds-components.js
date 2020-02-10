@@ -16,6 +16,10 @@ import dsModal from './ds-modal/ds-modal'; // -- модальное окно
 
 import dsMobileMenu from './ds-mobile-menu/ds-mobile-menu'; // мобильное меню
 
+// api
+
+import getUserStatus from './api/api'; // -- статус пользователя
+
 // -- экспортируем нужные функции
 export {
   dsTruncateHtml,
@@ -25,4 +29,5 @@ export {
   dsInputPass,
   dsModal,
   dsMobileMenu,
+  getUserStatus,
 };
