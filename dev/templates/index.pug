@@ -8,10 +8,10 @@ html(lang='en')
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Главная
   body(class=pageClass)
+    include ../ds-components/ds-mobile-menu/ds-mobile-menu
     .wrapper
       include ../components/ds-main-header/ds-main-header
       block content
-    include ../components/ds-mob-menu/ds-mob-menu
     block scripts
 
     script(src="js/jquery-3.3.1.min.js")

@@ -10,19 +10,20 @@ import { dsTruncateHtml } from './helpers-js/ds-truncate'; // обрезка с�
 import dsResizeHtmlFontRem from './helpers-js/ds-resize-html-font-rem'; // перещет html font-size от высоты экрана
 
 // -- компоненты
-import { dsAccordion, dsAccordionManual } from './ds-accordion/ds-accordion'; // js - аккордион для faq
+import { dsAccordion, dsAccordionManual } from './ds-accordion/ds-accordion'; // аккордион для faq
 
-// -- стилизованный выбор файла
-import dsInputFile from './ds-input-file/ds-input-file';
+import dsInputFile from './ds-input-file/ds-input-file'; // -- стилизованный выбор файла
 
-// -- стилизованный ввод пароля
-import dsInputPass from './ds-input-pass/ds-input-pass';
+import dsInputPass from './ds-input-pass/ds-input-pass'; // -- стилизованный ввод пароля
 
-// -- стилизованный html select
-import dsSelect from './ds-select/ds-select';
+import dsSelect from './ds-select/ds-select'; // -- стилизованный html select
 
-// -- импортируем тестовую библиотеку
-import dsModal from './ds-modal/ds-modal'; // js - стилизованный input file
+import dsModal from './ds-modal/ds-modal'; // -- модальное окно
+
+import dsMobileMenu from './ds-mobile-menu/ds-mobile-menu'; // мобильное меню
+
+// api
+import getUserStatus from './api/api'; // -- статус пользователя
 
 // -- экспортируем нужные функции
 export {
@@ -34,4 +35,6 @@ export {
   dsInputPass,
   dsSelect,
   dsModal,
+  dsMobileMenu,
+  getUserStatus,
 };

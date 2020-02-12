@@ -1,12 +1,4 @@
-// ds-input-pass
-// поле ввода пароля
-
-/*
-  Интерактив:
-    - .ds-input-pass.active отображает красную рамку
-    - .ds-input-pass.active отображает helper-text
-    - js: при клике на глаз меняется тип поля
-*/
+/* -- DS-INPUTPASS СТИЛИЗОВАННЫЙ ВВОД ПАРОЛЯ v.2.0.1 */
 
 // главный контейнер
 .ds-input-pass {
@@ -25,7 +17,6 @@
 
 // глаз - индикатор видимости пароля, меняется при смене типа поля
 .ds-input__eye-icon {
-  content: "";
   position: absolute;
   top: calc(50% - 1rem);
   right: .3rem;
@@ -37,6 +28,18 @@
   background-position: center;
   background-size: contain;
   cursor: pointer;
+
+  // загружаем сразу вторую картинку, чтобы не было эффекта мигания
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+    background-image: url("./images/ds-input-pass_show-icon.svg");
+    background-size: contain;
+    opacity: 0;
+  }
 }
 
 // изменяем глаз при смене типа поля
