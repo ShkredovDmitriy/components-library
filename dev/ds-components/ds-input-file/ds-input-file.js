@@ -1,44 +1,51 @@
-/*
-ds-input-file
-автор shkredovdmitriy@gmail.com
-Сделано:
-  - входящий конфиг перебивает дефолтный конфиг
-*/
-function dsInputFile(configIncoming) {
-  // -- КОНФИГУРАЦИЯ
-  // -- конфиг по умолчанию
-  const configDefault = {
-    mainContainer: '.ds-input-file', // контейнер компонента
-    fileNameBlock: '.ds-input-file__file-name', // блок для постановки именя выбранного файла
-    htmlInputField: '.ds-input-file__html-field', // html input type=file
-    logging: false, // вывод данных в console.log, true / false
-  };
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable func-names */
 
-  // -- входящий конфиг перебивает дефолтный
-  const config = Object.assign({}, configDefault, configIncoming);
+/* -- DS-INPUTFILE СТИЛИЗОВАННЫЙ ВЫБОР ФАЙЛА v.2.0.1 */
 
-  // -- ХЕЛПЕРЫ
+export default class dsInputFile {
+  constructor(incomingConfig) {
+    // конфиг по умолчанию
+    this.defaultConfig = {
+      container: '.ds-input-file', // контейнер компонента
+      fileName: '.ds-input-file__file-name', // блок для постановки имени выбранного файла
+      htmlField: '.ds-input-file__html-field', // html input type=file
+      logging: false, // вывод данных в console.log, true / false
+    };
+    // входящий конфиг заменяет дефолтный
+    this.config = Object.assign({}, this.defaultConfig, incomingConfig);
+  }
+
   // -- логгирование
-  function log(mes) {
-    if (config.logging) {
+  log(mes) {
+    if (this.config.logging) {
       console.log(`ds-input-file: ${mes}`);
     }
   }
 
-  // -- ОСНОВНОЙ ФУНКЦИОНАЛ
+  // -- выбираем html поле в компоненте
+  field(elm) {
+    return elm.querySelector(this.config.htmlField);
+  }
+
+  // -- вносим имя файла в псевдополе
+  fileName(elm, value) {
+    elm.querySelector(this.config.fileName).innerHTML = value;
+    this.log(`value = ${value}`);
+  }
+
   // -- прослушивание изменений в каждом input file
-  document.querySelectorAll(config.mainContainer).forEach(element => {
-    const inputFileField = element.querySelector(config.htmlInputField);
-    inputFileField.addEventListener('change', e => {
-      const inputFileValue = inputFileField.value.split(/(\\|\/)/g).pop();
-      element.querySelector(config.fileNameBlock).innerHTML = inputFileValue;
-      log(`value = ${inputFileValue}`);
+  init() {
+    document.querySelectorAll(this.config.container).forEach(elm => {
+      this.field(elm).addEventListener('change', e => {
+        const value = this.field(elm)
+          .value.split(/(\\|\/)/g)
+          .pop();
+        this.fileName(elm, value);
+      });
     });
-  });
-
-  // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
-  log('started');
+    // -- отчет о старте модуля
+    this.log(`initialized, class: ${this.config.container}`);
+  }
 }
-
-// экспортируем
-export { dsInputFile };

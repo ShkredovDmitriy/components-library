@@ -1,4 +1,4 @@
-extends ../../templates/blazy
+extends ../../templates/index
 
 include ../../common/pug/mixins.pug
 
@@ -30,3 +30,6 @@ block content
     
     .section.section-4
         .some-bg-container1.b-lazy
+
+block scripts
+    script(src="js/blazy.min.js")
