@@ -39,7 +39,7 @@ export default class dsInputPass {
         }
       });
     });
-    // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
-    this.log('started');
+    // -- отчет о старте модуля
+    this.log(`initialized, class: ${this.config.container}`);
   }
 }

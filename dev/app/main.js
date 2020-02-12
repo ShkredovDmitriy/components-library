@@ -8,6 +8,8 @@ import {
   dsAccordionManual,
   dsInputFile,
   dsInputPass,
+  dsSelect,
+  dsTextarea,
   dsModal,
   dsMobileMenu,
   getUserStatus,
@@ -35,6 +37,9 @@ if (document.querySelector('.form-page')) {
   inputFile.init();
   const inputPass = new dsInputPass({ logging: true });
   inputPass.init();
+  const select = new dsSelect({ logging: true });
+  select.init();
+  dsTextarea();
   dsTruncateHtml('.test', 10);
 }
 
@@ -74,10 +79,10 @@ if (document.querySelector('.blazy-page')) {
   const bLazy = new Blazy();
 }
 
-// проверка статуся пользователя
-// https://reqres.in/api/login - 400
-// https://reqres.in/api/users/23 - 404
-// https://reqres.in/api/users/2 - 204
 if (document.querySelector('.modal-page')) {
+  // проверка статуся пользователя
+  // https://reqres.in/api/login - 400
+  // https://reqres.in/api/users/23 - 404
+  // https://reqres.in/api/users/2 - 204
   getUserStatus('https://reqres.in/api/login', dsModal);
 }

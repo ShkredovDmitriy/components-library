@@ -31,4 +31,4 @@ function dsTextarea(configIncoming) {
   });
 }
 
-export { dsTextarea };
+export default dsTextarea;

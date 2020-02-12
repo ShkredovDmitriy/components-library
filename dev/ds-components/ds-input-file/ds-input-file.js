@@ -45,7 +45,7 @@ export default class dsInputFile {
         this.fileName(elm, value);
       });
     });
-    // -- ОТЧЕТ О СТАРТЕ МОДУЛЯ
-    this.log('started');
+    // -- отчет о старте модуля
+    this.log(`initialized, class: ${this.config.container}`);
   }
 }

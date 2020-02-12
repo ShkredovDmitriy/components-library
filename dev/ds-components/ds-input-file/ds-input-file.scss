@@ -9,7 +9,8 @@ ds-input-file
 
 // главный контейнер
 .ds-input-file {
-  margin: .5rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
   width: 100%;
   max-width: 31.25rem;
 }
@@ -35,8 +36,6 @@ ds-input-file
   font-size: .8125rem;
   color: #252525;
   color: #979797;
-  cursor: pointer;
-  outline: none;
 }
 
 // кнопка загрузки
@@ -51,6 +50,7 @@ ds-input-file
   border-bottom-right-radius: .37rem;
   background-color: #d8d8d8;
   color: #000000;
+  cursor: pointer;
 }
 
 // контейнер для название загруженного файла
