@@ -78,5 +78,6 @@ if (document.querySelector('.blazy-page')) {
 // https://reqres.in/api/login - 400
 // https://reqres.in/api/users/23 - 404
 // https://reqres.in/api/users/2 - 204
-
-getUserStatus('https://reqres.in/api/login', dsModal);
+if (document.querySelector('.modal-page')) {
+  getUserStatus('https://reqres.in/api/login', dsModal);
+}
