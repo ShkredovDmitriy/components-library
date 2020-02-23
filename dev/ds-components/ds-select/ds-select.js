@@ -20,6 +20,7 @@ export default class dsSelect {
     this.config = Object.assign({}, this.defaultConfig, incomingConfig);
     // состояние - открыт или закрыт
     this.state = 0;
+    this.name = [];
   }
 
   // -- ХЕЛПЕРЫ
@@ -113,6 +114,29 @@ export default class dsSelect {
           });
         });
     });
+  }
+
+  // сброс
+  reset(id) {
+    console.log();
+    $(id)
+      .find(this.config.container)
+      .each((i, element) => {
+        // сброс текста
+        $(element)
+          .find('.ds-select__selected-text')
+          .html(this.name[i]);
+        this.log(`reset: ${this.name[i]}`);
+
+        // сброс selected
+        $(element)
+          .find('option')
+          .each((i, option) => {
+            if (i === 0) {
+              option.setAttribute('selected', true);
+            }
+          });
+      });
   }
 
   // инициализация компонента
