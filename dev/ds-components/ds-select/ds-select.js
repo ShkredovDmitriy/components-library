@@ -116,6 +116,26 @@ export default class dsSelect {
     });
   }
 
+  // -- закрываем открытый селект при клике по body
+  closeActiveSelect() {
+    document.querySelector('html, body').addEventListener('click', event => {
+      let closeElement = true;
+      $(this.config.container).each((i, element) => {
+        if ($(element).is(event.target) || $(element).has(event.target).length > 0) {
+          closeElement = false;
+        }
+      });
+      if (closeElement) {
+        if (this.state === 1) {
+          console.log('закрываем');
+          $(this.config.container).each((i, element) => {
+            this.openCloseDropdown(element);
+          });
+        }
+      }
+    });
+  }
+
   // сброс
   reset(id) {
     console.log();
@@ -141,6 +161,7 @@ export default class dsSelect {
 
   // инициализация компонента
   init() {
+    this.closeActiveSelect();
     this.addOptionsToList();
     this.addOpenListeners();
     this.selectAnyOption();
