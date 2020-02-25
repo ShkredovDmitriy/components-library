@@ -1,0 +1,135 @@
+/*
+ds-multi-select
+стилизованный html select
+
+Интерактив:
+  - .ds-multi-select.active отображает красную рамку
+  - .ds-multi-select.active отображает helper-text
+*/
+
+// -- главный блок компонента
+.ds-multi-select {
+  @include user-select-none();
+  position: relative;
+  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+// -- скрываем оригинальный html select
+.ds-multi-select__html-select {
+  display: none;
+}
+
+// -- блок с псевдоселектом
+.ds-multi-select__selected-option {
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  padding-top: .5rem;
+  padding-right: 3.5rem;
+  padding-bottom: .5rem;
+  padding-left: 1.5rem;
+  width: 100%;
+  min-height: 4.375rem;
+  border-radius: .25rem;
+  background-color: black;
+  color: #848484;
+  cursor: pointer;
+}
+
+// -- текст по умолчанию, заменяется на выбранный из выпадающего списка
+.ds-multi-select__selected-text {
+}
+
+// анимация стрелки указателя
+.ds-multi-select.active .ds-arrow-pointer {
+  transform: rotate(-180deg);
+}
+
+// -- блок с выпадающим списком
+.ds-multi-select__dropdown-option {
+  position: absolute;
+  top: 4.6875rem;
+  z-index: 1;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.ds-multi-select__arrow-pointer {
+  position: absolute;
+  top: calc(50% - .5625rem);
+  right: 1.625rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-image: url("./images/ds-dropdown-arrow-grey.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// -- выпадающий список
+.ds-multi-select__options-list {
+  display: block;
+  margin: 0;
+  margin-bottom: .1rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  border: 1px solid #e1e1e1;
+  border-radius: .3rem;
+  background: white;
+  text-align: left;
+  color: #848484;
+  transition: max-height 200ms;
+}
+
+// -- элементы выпадающего списка
+.ds-multi-select__options-list li {
+  position: relative;
+  padding-top: .5rem;
+  padding-right: 3.5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  cursor: pointer;
+  list-style-type: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - .5rem);
+    right: 1.43rem;
+    display: block;
+    width: 1.25rem;
+    height: 1rem;
+    background-image: url("./images/ds-multi-select-selected-arrow.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+  }
+}
+
+// -- активный элементы выпадающего списка
+.ds-multi-select__options-list li.selected {
+
+  &:after {
+    opacity: 1;
+  }
+}
+
+// -- эфект при наведении
+.ds-multi-select__options-list li:hover {
+  // background: rgba(0, 0, 0, .1);
+}
+
+// меняем цвет рамки поля на красный если есть класс .error
+.ds-multi-select.error .ds-multi-select__selected-option {
+  border: .15rem solid red;
+}
+
+// отображаем helper-text если есть класс .error
+.ds-multi-select.error .helper-text {
+  display: block;
+}

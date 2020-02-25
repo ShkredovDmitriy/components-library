@@ -39,6 +39,19 @@ block content
                         span.ds-input__eye-icon
                     .helper-text пароли не совпадают
                     
+            .ds-input__container
+                .ds-multi-select
+                    select#paymentFormField1.ds-multi-select__html-select(multiple name="category1")
+                        option(value="empty" selected="true")
+                        option(value="option2") Тип запроса номер два два два
+                        option(value="option3") Тип запроса номер три три три
+                        option(value="option4") Тип запроса номер четыре четыре четыре
+                    .ds-multi-select__selected-option
+                        .ds-multi-select__selected-text Выберите тип запроса
+                        .ds-multi-select__arrow-pointer
+                    .ds-multi-select__dropdown-option
+                        ul.ds-multi-select__options-list
+                .ds-input__error-text
 
             .form-wrapper
                 .ds-select
