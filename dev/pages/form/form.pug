@@ -4,10 +4,48 @@ block variables
     - var pageClass = 'form-page'
 
 block content
-
     .section-form
 
-        form(action="ds-select.html")
+
+
+        //- login form
+        form.ds-form(id="form" action="ds-select.html")
+            .form-wrapper
+
+                .ds-input.validationOn
+                    label.ds-input__label(for="userName") Введите Имя
+                        input.ds-input__field(type="text" id="userName" placeholder="Введите Имя")
+                    .helper-text введите имя
+                
+                .ds-input.validationOn
+                    label.ds-input__label(for="userName") Введите Имя
+                        input.ds-input__field(type="text" id="userName" placeholder="Введите Имя")
+                    .helper-text введите имя
+                
+                .ds-input.validationOn
+                    label.ds-input__label(for="userName") Введите Имя
+                        input.ds-input__field(type="text" id="userName" placeholder="Введите Имя")
+                    .helper-text введите имя
+                
+                .ds-input.validationOn
+                    label.ds-input__label(for="userName") Введите Имя
+                        input.ds-input__field(type="text" id="userName" placeholder="Введите Имя")
+                    .helper-text введите имя
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //- all forms item 
+        form.ds-form(id="form-test" action="ds-select.html")
 
             .form-wrapper
                 .ds-input
@@ -141,9 +179,6 @@ block content
                         .ds-multi-select__dropdown-block
                             ul.ds-multi-select__options-list
                     .ds-multi-select__helper-text Выберите тип ошибки
-
-
-
 
             .form-wrapper
                 .ds-textarea
