@@ -42,51 +42,108 @@ block content
 
             .form-wrapper
                 .ds-select
-                    label.ds-input__label Тип запроса
-                    select#dsSelect.ds-select__html-select(name="category1")
-                        option(value="none" selected="true")
-                        option(value="option1") Тип запроса номер два два два
-                        option(value="option2") Тип запроса номер три три три
-                        option(value="option3") Тип запроса номер четыре четыре четыре
-                    .ds-select__selected-option
-                        .ds-select__selected-text Выберите номер запроса
-                        .ds-arrow-pointer
-                    .ds-select__dropdown-option
-                        ul.ds-select__options-list
-                    .helper-text выберите пункт
+                    label
+                        .ds-select__label-text Выбрите тип запроса
+                        select#userName.ds-select__html-select(name='userName')
+                            option(value='empty', selected='true')
+                            option(value='option1') Тип запроса номер 1
+                            option(value='option2') Тип запроса номер 2
+                            option(value='option3') Тип запроса номер 3
+                            option(value='option4') Тип запроса номер 4
+                            option(value='option4') Тип запроса номер 5
+                    .ds-select__dropdown-container
+                        .ds-select__open-button Выберите тип запроса
+                        .ds-select__dropdown-block
+                            ul.ds-select__options-list
+                    .ds-select__helper-text Выберите тип запроса
 
             .form-wrapper
-
-                .ds-select
-                    label.ds-input__label Тип запроса
-                    select#dsSelect.ds-select__html-select(name="category2")
-                        option(value="none" selected="true")
-                        option(value="option1") Lorem, ipsum dolor ret.
-                        option(value="option2") Lorem ipsum dolor sit amet.
-                        option(value="option3") Lorem ipsum dolor sit amet rew.
-                        option(value="option4") Lorem ipsum dolor sit amet consectetur.
-                    .ds-select__selected-option
-                        .ds-select__selected-text Выберите что нибудь
-                        .ds-arrow-pointer
-                    .ds-select__dropdown-option
-                        ul.ds-select__options-list
-                    .helper-text выберите пункт
+                .ds-select.error
+                    label
+                        .ds-select__label-text Выбрите тип ответа который на ваш взгляд верный
+                        select#userName.ds-select__html-select(name='userName')
+                            option(value='empty', selected='true')
+                            option(value='option1') Тип ответа номер 1
+                            option(value='option2') Тип ответа номер 2
+                            option(value='option3') Тип ответа номер 3
+                            option(value='option4') Тип ответа номер 4
+                            option(value='option4') Тип ответа номер 5
+                    .ds-select__dropdown-container
+                        .ds-select__open-button Выбрите тип ответа который на ваш взгляд верный
+                        .ds-select__dropdown-block
+                            ul.ds-select__options-list
+                    .ds-select__helper-text Выберите тип ответа
 
             .form-wrapper
-
                 .ds-select
-                    label.ds-input__label Тип запроса
-                    select#dsSelect.ds-select__html-select(name="category3")
-                        option(value="none" selected="true")
-                        option(value="option1") Lorem ipsum dolor sit amet.
-                        option(value="option2") Lorem ipsum dolor sit amet consectetur.
-                        option(value="option3") Lorem ipsum dolor sit amet rew.
-                    .ds-select__selected-option
-                        .ds-select__selected-text Выберите категорию
-                        .ds-arrow-pointer
-                    .ds-select__dropdown-option
-                        ul.ds-select__options-list
-                    .helper-text выберите пункт
+                    label
+                        .ds-select__label-text Выбрите тип ошибки
+                        select#userName.ds-select__html-select(name='userName')
+                            option(value='empty', selected='true')
+                            option(value='option1') Тип ошибки номер 1
+                            option(value='option2') Тип ошибки номер 2
+                            option(value='option3') Тип ошибки номер 3
+                            option(value='option4') Тип ошибки номер 4
+                            option(value='option4') Тип ошибки номер 5
+                    .ds-select__dropdown-container
+                        .ds-select__open-button Выберите тип ошибки
+                        .ds-select__dropdown-block
+                            ul.ds-select__options-list
+                    .ds-select__helper-text Выберите тип ошибки
+
+            .form-wrapper
+                .ds-multi-select
+                    label
+                        .ds-multi-select__label-text Выбрите тип запроса
+                        select#userName.ds-multi-select__html-select(name='userName')
+                            option(value='empty', selected='true')
+                            option(value='option1') Тип запроса номер 1
+                            option(value='option2') Тип запроса номер 2
+                            option(value='option3') Тип запроса номер 3
+                            option(value='option4') Тип запроса номер 4
+                            option(value='option4') Тип запроса номер 5
+                    .ds-multi-select__dropdown-container
+                        .ds-multi-select__open-button Выберите тип запроса
+                        .ds-multi-select__dropdown-block
+                            ul.ds-multi-select__options-list
+                    .ds-multi-select__helper-text Выберите тип запроса
+            
+            .form-wrapper
+                .ds-multi-select
+                    label
+                        .ds-multi-select__label-text Выбрите тип ответа который на ваш взгляд верный
+                        select#userName.ds-multi-select__html-select(name='userName')
+                            option(value='empty', selected='true')
+                            option(value='option1') Тип ответа номер 1
+                            option(value='option2') Тип ответа номер 2
+                            option(value='option3') Тип ответа номер 3
+                            option(value='option4') Тип ответа номер 4
+                            option(value='option4') Тип ответа номер 5
+                    .ds-multi-select__dropdown-container
+                        .ds-multi-select__open-button Выберите тип ответа
+                        .ds-multi-select__dropdown-block
+                            ul.ds-multi-select__options-list
+                    .ds-multi-select__helper-text Выберите тип ответа
+
+            .form-wrapper
+                .ds-multi-select
+                    label
+                        .ds-multi-select__label-text Выбрите тип ошибки
+                        select#userName.ds-multi-select__html-select(name='userName')
+                            option(value='empty', selected='true')
+                            option(value='option1') Тип ошибки номер 1
+                            option(value='option2') Тип ошибки номер 2
+                            option(value='option3') Тип ошибки номер 3
+                            option(value='option4') Тип ошибки номер 4
+                            option(value='option4') Тип ошибки номер 5
+                    .ds-multi-select__dropdown-container
+                        .ds-multi-select__open-button Выберите тип ошибки
+                        .ds-multi-select__dropdown-block
+                            ul.ds-multi-select__options-list
+                    .ds-multi-select__helper-text Выберите тип ошибки
+
+
+
 
             .form-wrapper
                 .ds-textarea

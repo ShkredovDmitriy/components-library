@@ -4,16 +4,16 @@
 
 /* -- DS-SELECT СТИЛИЗОВАННЫЙ HTML SELECT v.2.0.1 */
 
-export default class dsSelect {
+export default class dsMultiSelect {
   constructor(incomingConfig) {
     // конфиг по умолчанию
     this.defaultConfig = {
-      container: '.ds-select', // уникальный класс контейнера компонента
-      optionsList: '.ds-select__options-list', // формируем список опций
-      selectedOption: '.ds-select__open-button', // блок с выбранным значением
-      dropdownOption: '.ds-select__dropdown-block', // раскрывающийся блок со списком опций
+      container: '.ds-multi-select', // уникальный класс контейнера компонента
+      optionsList: '.ds-multi-select__options-list', // формируем список опций
+      selectedOption: '.ds-multi-select__open-button', // блок с выбранным значением
+      dropdownOption: '.ds-multi-select__dropdown-block', // раскрывающийся блок со списком опций
       activeClass: 'active', // класс на раскрытом селекте
-      selectedText: '.ds-select__open-button', // блок с выбранным текстом
+      selectedText: '.ds-multi-select__selected-text', // блок с выбранным текстом
       logging: false, // вывод данных в console.log, true / false
     };
     // входящий конфиг заменяет дефолтный
@@ -27,7 +27,7 @@ export default class dsSelect {
   // -- логгирование
   log(mes) {
     if (this.config.logging) {
-      console.log(`ds-select: ${mes}`);
+      console.log(`ds-multi-select: ${mes}`);
     }
   }
 
@@ -36,10 +36,15 @@ export default class dsSelect {
     $(element)
       .find('option')
       .each((i, option) => {
+        if (i === 0) {
+          option.removeAttribute('selected', true);
+        }
         if (i === arg + 1) {
-          option.setAttribute('selected', true);
-        } else {
-          option.removeAttribute('selected');
+          if ($(option).attr('selected')) {
+            option.removeAttribute('selected', true);
+          } else {
+            option.setAttribute('selected', true);
+          }
         }
       });
   }
@@ -91,9 +96,8 @@ export default class dsSelect {
   // -- устанавливаем подписки на раскрытие списка
   addOpenListeners() {
     $(this.config.container).each((i, element) => {
-      console.log(element);
       this.name[i] = $(element)
-        .find('.ds-select__selected-text')
+        .find('.ds-multi-select__selected-text')
         .html();
       $(element)
         .find(this.config.selectedOption)
@@ -111,16 +115,17 @@ export default class dsSelect {
         .each((i, li) => {
           $(li).click(() => {
             this.addSelectedToOption(element, i);
-            this.changeTextFromDefault(element, i);
-            this.openCloseDropdown();
+            $(li).toggleClass('selected');
+            // this.changeTextFromDefault(element, i);
+            // this.openCloseDropdown();
             this.log(`выбрана опция ${i}`);
-            $('.ds-select__html-select').trigger('change');
+            $('.ds-multi-select__html-select').trigger('change');
           });
         });
     });
   }
 
-  // -- click on body close components
+  // -- закрываем открытый селект при клике по body
   closeActiveSelect() {
     document.querySelector('html, body').addEventListener('click', event => {
       let closeElement = true;
@@ -132,24 +137,27 @@ export default class dsSelect {
       if (closeElement) {
         if (this.state === 1) {
           $(this.config.container).each((i, element) => {
-            this.openCloseDropdown(element);
+            if ($(element).hasClass('active')) {
+              this.openCloseDropdown(element);
+            }
           });
         }
       }
     });
   }
 
-  // component reset
+  // сброс
   reset(id) {
     console.log();
     $(id)
       .find(this.config.container)
       .each((i, element) => {
-        // сброс текста
+        // сброс галочек
         $(element)
-          .find('.ds-select__selected-text')
-          .html(this.name[i]);
-        this.log(`reset: ${this.name[i]}`);
+          .find('li')
+          .each((i, li) => {
+            $(li).removeClass('selected');
+          });
 
         // сброс selected
         $(element)
@@ -157,18 +165,20 @@ export default class dsSelect {
           .each((i, option) => {
             if (i === 0) {
               option.setAttribute('selected', true);
+            } else {
+              option.removeAttribute('selected', true);
             }
           });
       });
   }
 
-  // component init
+  // инициализация компонента
   init() {
     this.closeActiveSelect();
     this.addOptionsToList();
     this.addOpenListeners();
     this.selectAnyOption();
-    // -- start logs
+    // -- отчет о старте модуля
     this.log(`initialized, class: ${this.config.container}`);
   }
 }

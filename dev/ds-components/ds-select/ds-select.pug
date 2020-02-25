@@ -1,14 +1,15 @@
-    .form-wrapper
-        .ds-select
-            label.ds-select__label Тип запроса
-            select#dsSelect.ds-select__html-select(name="category1")
-                option(value="option1" selected="true") Тип запроса один
-                option(value="option2") Тип запроса номер два два два
-                option(value="option3") Тип запроса номер три три три
-                option(value="option4") Тип запроса номер четыре четыре четыре
-            .ds-select__selected-option
-                .ds-select__selected-text Выберите тип запроса
-                .ds-arrow-pointer
-            .ds-select__dropdown-option
-                ul.ds-select__options-list
-            .helper-text выберите пункт
+.ds-select
+    label
+        .ds-select__label-text Выбрите тип запроса
+        select#userName.ds-select__html-select(name='userName')
+            option(value='empty', selected='true')
+            option(value='option1') Тип запроса номер 1
+            option(value='option2') Тип запроса номер 2
+            option(value='option3') Тип запроса номер 3
+            option(value='option4') Тип запроса номер 4
+            option(value='option4') Тип запроса номер 5
+    .ds-select__dropdown-container
+        .ds-select__open-button Выберите тип запроса
+        .ds-select__dropdown-block
+            ul.ds-select__options-list
+    .ds-select__helper-text Выберите тип запроса

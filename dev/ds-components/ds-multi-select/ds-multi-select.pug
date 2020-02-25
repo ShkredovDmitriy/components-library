@@ -1,0 +1,15 @@
+.ds-multi-select
+    label
+        .ds-multi-select__label-text Выбрите тип запроса
+        select#userName.ds-multi-select__html-select(name='userName')
+            option(value='empty', selected='true')
+            option(value='option1') Тип запроса номер 1
+            option(value='option2') Тип запроса номер 2
+            option(value='option3') Тип запроса номер 3
+            option(value='option4') Тип запроса номер 4
+            option(value='option4') Тип запроса номер 5
+    .ds-multi-select__dropdown-container
+        .ds-multi-select__open-button Выберите тип запроса
+        .ds-multi-select__dropdown-block
+            ul.ds-multi-select__options-list
+    .ds-multi-select__helper-text Выберите тип запроса

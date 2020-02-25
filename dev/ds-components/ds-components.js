@@ -18,6 +18,8 @@ import dsInputPass from './ds-input-pass/ds-input-pass'; // -- стилизов�
 
 import dsSelect from './ds-select/ds-select'; // -- стилизованный html select
 
+import dsMultiSelect from './ds-multi-select/ds-multi-select'; // -- стилизованный html select multiple
+
 import dsTextarea from './ds-textarea/ds-textarea'; // -- блок подстраивается под высоту текста
 
 import dsModal from './ds-modal/ds-modal'; // -- модальное окно
@@ -36,6 +38,7 @@ export {
   dsInputFile,
   dsInputPass,
   dsSelect,
+  dsMultiSelect,
   dsTextarea,
   dsModal,
   dsMobileMenu,

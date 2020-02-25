@@ -1,98 +1,115 @@
 /*
 ds-select
 стилизованный html select
-
-Интерактив:
-  - .ds-select.active отображает красную рамку
-  - .ds-select.active отображает helper-text
 */
 
-// -- главный блок компонента
+$fontColor: grey;
+$borderColor: grey;
+$borderRadius: .3rem;
+
 .ds-select {
-  @include user-select-none();
-  position: relative;
+  margin-top: 2rem;
   width: 100%;
-  font-size: 1.2rem;
-  line-height: 1.2;
 }
 
-// -- скрываем оригинальный html select
-.ds-select__html-select {
-  display: none;
+.ds-select__label-text {
+  padding-bottom: .5rem;
+  color: $fontColor;
 }
 
-// -- блок с псевдоселектом
-.ds-select__selected-option {
+.ds-select__dropdown-container {
   position: relative;
-  justify-content: flex-start;
+}
+
+.ds-select__open-button {
+  position: relative;
+  justify-content: start;
   align-items: center;
   display: flex;
+  margin-bottom: .5rem;
   padding-top: .5rem;
   padding-right: 2rem;
-  padding-bottom: .5rem;
   padding-left: 1rem;
-  width: 100%;
-  min-height: 3.25rem;
-  border: .15rem solid #848484;
-  border-radius: .3rem;
-  font-size: inherit;
-  color: #848484;
+  min-height: $field-height;
+  border-top: 2px solid $borderColor;
+  border-right: 2px solid $borderColor;
+  border-left: 2px solid $borderColor;
+  border-top-left-radius: $borderRadius;
+  border-top-right-radius: $borderRadius;
+  background-color: white;
+  color: $fontColor;
   cursor: pointer;
 }
 
-// -- текст по умолчанию, заменяется на выбранный из выпадающего списка
-.ds-select__selected-text {
-}
-
-// анимация стрелки указателя
-.ds-select.active .ds-arrow-pointer {
-  transform: rotate(-180deg);
-}
-
-// -- блок с выпадающим списком
-.ds-select__dropdown-option {
+.ds-select__open-button:after {
+  content: "";
   position: absolute;
-  top: 105%;
-  z-index: 1;
-  max-height: 0;
-  overflow: hidden;
-}
-
-// -- выпадающий список
-.ds-select__options-list {
+  top: calc(50% - .25rem);
+  right: .75rem;
   display: block;
-  margin: 0;
-  margin-bottom: .1rem;
-  border: .15rem solid #848484;
-  border-radius: .3rem;
-  background: white;
-  font-size: inherit;
-  text-align: left;
-  color: #848484;
-  transition: max-height 200ms;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("./images/arrow-down-grey.svg");
+  background-position: center;
+  background-size: contain;
 }
 
-// -- элементы выпадающего списка
-.ds-select__options-list li {
-  padding-top: .5rem;
-  padding-right: 2rem;
+.ds-select__dropdown-block {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 0;
   padding-bottom: .5rem;
+  width: 100%;
+  max-height: 0;
+  border-right: 2px solid $borderColor;
+  border-bottom: 2px solid $borderColor;
+  border-left: 2px solid $borderColor;
+  border-bottom-right-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 300ms, z-index 300ms;
+}
+
+.ds-select__options-list {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.ds-select__options-list li {
+  padding-top: .375rem;
+  padding-right: 2rem;
+  padding-bottom: .375rem;
   padding-left: 1rem;
+  color: $fontColor;
   cursor: pointer;
-  list-style-type: none;
 }
 
-// -- эфект при наведении
-.ds-select__options-list li:hover {
-  background: rgba(0, 0, 0, .1);
+.ds-select__helper-text {
+  padding-top: .25rem;
+  min-height: 1.5rem;
+  font-size: .875rem;
+  color: red;
 }
 
-// меняем цвет рамки поля на красный если есть класс .error
-.ds-select.error .ds-select__selected-option {
-  border: .15rem solid red;
+// if active
+.ds-select.active {
+
+  .ds-select__dropdown-block {
+    z-index: 30;
+  }
 }
 
-// отображаем helper-text если есть класс .error
-.ds-select.error .helper-text {
-  display: block;
+// if error
+.ds-select.error {
+
+  .ds-select__open-button,
+  .ds-select__dropdown-block {
+    border-color: red;
+  }
+}
+
+.ds-select__html-select {
+  display: none;
 }

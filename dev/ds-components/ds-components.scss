@@ -11,22 +11,26 @@
 @import "./helpers-scss/text-overflow-elipsis.scss"; // обрезка текста + ...
 
 // компоненты
-@import "./ds-modal/ds-modal.scss"; // модальное окно
+@import "./ds-modal/ds-modal.scss";
 
-@import "./ds-radiobtn/ds-radiobtn.scss"; // стилизованная радио кнопка
+@import "./ds-form/ds-form.scss";
 
-@import "./ds-checkbox/ds-checkbox.scss"; // стилизованный чекбокс
+@import "./ds-radiobtn/ds-radiobtn.scss";
 
-@import "./ds-input/ds-input.scss"; // стилизованный input
+@import "./ds-checkbox/ds-checkbox.scss";
 
-@import "./ds-input-file/ds-input-file.scss"; // поля ввода файла
+@import "./ds-input/ds-input.scss";
 
-@import "./ds-input-pass/ds-input-pass.scss"; // поля ввода пароля
+@import "./ds-input-file/ds-input-file.scss";
 
-@import "./ds-select/ds-select.scss"; // стилизованный html select
+@import "./ds-input-pass/ds-input-pass.scss";
 
-@import "./ds-textarea/ds-textarea.scss"; // адаптивный блок для ввода текста
+@import "./ds-select/ds-select.scss";
 
-@import "./ds-accordion/ds-accordion.scss"; // аккордион для faq
+@import "./ds-multi-select/ds-multi-select.scss";
 
-@import "./ds-mobile-menu/ds-mobile-menu.scss"; // мобильное меню
+@import "./ds-textarea/ds-textarea.scss";
+
+@import "./ds-accordion/ds-accordion.scss";
+
+@import "./ds-mobile-menu/ds-mobile-menu.scss";
