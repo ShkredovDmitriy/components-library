@@ -1,0 +1,27 @@
+// подключаем ds библиотеку scss
+@import "../../ds-components/ds-components.scss";
+
+// -- стили элементов
+@import "../../elements/ds-mob-menu-btn/ds-mob-menu-btn.scss";
+
+@import "../../elements/ds-close-btn/ds-close-btn.scss";
+
+@import "../../elements/ds-arrow-pointer/ds-arrow-pointer";
+
+@import "../../elements/ds-plus-btn/ds-plus-btn";
+
+@import "../../elements/helper-text/helper-text.scss";
+
+// -- стили компонентов
+@import "../../components/ds-main-header/ds-main-header.scss";
+
+// -- стили страниц
+@import "../../pages/index/index.scss";
+
+@import "../../pages/form/form.scss";
+
+@import "../../pages/faq/faq.scss";
+
+@import "../../pages/sticky/sticky.scss";
+
+@import "../../pages/blazy/blazy.scss";

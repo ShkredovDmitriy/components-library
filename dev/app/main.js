@@ -9,6 +9,7 @@ import {
   dsInputFile,
   dsInputPass,
   dsSelect,
+  dsMultiSelect,
   dsTextarea,
   dsModal,
   dsMobileMenu,
@@ -39,6 +40,8 @@ if (document.querySelector('.form-page')) {
   inputPass.init();
   const select = new dsSelect({ logging: true });
   select.init();
+  const mSelect = new dsMultiSelect({ logging: true });
+  mSelect.init();
   dsTextarea();
   dsTruncateHtml('.test', 10);
 }

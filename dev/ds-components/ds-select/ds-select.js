@@ -10,10 +10,10 @@ export default class dsSelect {
     this.defaultConfig = {
       container: '.ds-select', // уникальный класс контейнера компонента
       optionsList: '.ds-select__options-list', // формируем список опций
-      selectedOption: '.ds-select__selected-option', // блок с выбранным значением
-      dropdownOption: '.ds-select__dropdown-option', // раскрывающийся блок со списком опций
+      selectedOption: '.ds-select__open-button', // блок с выбранным значением
+      dropdownOption: '.ds-select__dropdown-block', // раскрывающийся блок со списком опций
       activeClass: 'active', // класс на раскрытом селекте
-      selectedText: '.ds-select__selected-text', // блок с выбранным текстом
+      selectedText: '.ds-select__open-button', // блок с выбранным текстом
       logging: false, // вывод данных в console.log, true / false
     };
     // входящий конфиг заменяет дефолтный
@@ -91,6 +91,10 @@ export default class dsSelect {
   // -- устанавливаем подписки на раскрытие списка
   addOpenListeners() {
     $(this.config.container).each((i, element) => {
+      console.log(element);
+      this.name[i] = $(element)
+        .find('.ds-select__selected-text')
+        .html();
       $(element)
         .find(this.config.selectedOption)
         .click(() => {
@@ -116,7 +120,7 @@ export default class dsSelect {
     });
   }
 
-  // -- закрываем открытый селект при клике по body
+  // -- click on body close components
   closeActiveSelect() {
     document.querySelector('html, body').addEventListener('click', event => {
       let closeElement = true;
@@ -127,7 +131,6 @@ export default class dsSelect {
       });
       if (closeElement) {
         if (this.state === 1) {
-          console.log('закрываем');
           $(this.config.container).each((i, element) => {
             this.openCloseDropdown(element);
           });
@@ -136,7 +139,7 @@ export default class dsSelect {
     });
   }
 
-  // сброс
+  // component reset
   reset(id) {
     console.log();
     $(id)
@@ -159,13 +162,13 @@ export default class dsSelect {
       });
   }
 
-  // инициализация компонента
+  // component init
   init() {
     this.closeActiveSelect();
     this.addOptionsToList();
     this.addOpenListeners();
     this.selectAnyOption();
-    // -- отчет о старте модуля
+    // -- start logs
     this.log(`initialized, class: ${this.config.container}`);
   }
 }

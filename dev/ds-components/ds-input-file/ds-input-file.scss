@@ -1,10 +1,6 @@
 /*
 ds-input-file
 стилизованный input file
-
-Интерактив:
-  - .ds-input-file.active отображает красную рамку
-  - .ds-input-file.active отображает helper-text
 */
 
 // главный контейнер
@@ -12,7 +8,6 @@ ds-input-file
   margin-top: .5rem;
   margin-bottom: .5rem;
   width: 100%;
-  max-width: 31.25rem;
 }
 
 // надпись над полем
@@ -31,10 +26,8 @@ ds-input-file
   align-items: center;
   display: flex;
   width: 100%;
-  height: 2.5rem;
-  font-size: .875rem;
+  height: $field-height;
   font-size: .8125rem;
-  color: #252525;
   color: #979797;
 }
 
@@ -46,10 +39,11 @@ ds-input-file
   display: flex;
   width: 4.5rem;
   height: 100%;
-  border-top-right-radius: .37rem;
-  border-bottom-right-radius: .37rem;
-  background-color: #d8d8d8;
-  color: #000000;
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+  background-color: $borderColor;
+  font-size: 1rem;
+  color: white;
   cursor: pointer;
 }
 
@@ -62,9 +56,9 @@ ds-input-file
   padding-left: .5rem;
   width: calc(100% - 4.5rem);
   height: 100%;
-  border: 1px solid #d8d8d8;
-  border-top-left-radius: .37rem;
-  border-bottom-left-radius: .37rem;
+  border: $borderSize solid $borderColor;
+  border-top-left-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
   font-size: .875rem;
 }
 
@@ -81,16 +75,10 @@ ds-input-file
   display: none;
 }
 
-// .error - добавляем красную рамку
-.ds-input-file.error .ds-input-file__label {
-  border: 1px solid red;
-  border-radius: .375rem;
-}
+// if error
+.ds-input-file.error {
 
-// .error - отображем helper-text
-.ds-input-file.error .helper-text {
-  display: block;
-  margin-top: .25rem;
-  padding-left: .5rem;
-  font-size: .75rem;
+  .ds-input-file__file-name-container {
+    border-color: red;
+  }
 }

@@ -10,8 +10,8 @@ export default class dsMultiSelect {
     this.defaultConfig = {
       container: '.ds-multi-select', // уникальный класс контейнера компонента
       optionsList: '.ds-multi-select__options-list', // формируем список опций
-      selectedOption: '.ds-multi-select__selected-option', // блок с выбранным значением
-      dropdownOption: '.ds-multi-select__dropdown-option', // раскрывающийся блок со списком опций
+      selectedOption: '.ds-multi-select__open-button', // блок с выбранным значением
+      dropdownOption: '.ds-multi-select__dropdown-block', // раскрывающийся блок со списком опций
       activeClass: 'active', // класс на раскрытом селекте
       selectedText: '.ds-multi-select__selected-text', // блок с выбранным текстом
       logging: false, // вывод данных в console.log, true / false
